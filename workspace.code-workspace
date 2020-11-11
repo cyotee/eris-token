@@ -4,10 +4,10 @@
 			"path": "."
 		},
 		{
-			"path": "old"
+			"path": "..\\openzeppelin-contracts"
 		},
 		{
-			"path": "..\\openzeppelin-contracts"
+			"path": "..\\examples"
 		}
 	],
 	"settings": {
