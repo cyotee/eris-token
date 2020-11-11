@@ -4,9 +4,9 @@ pragma solidity 0.7.4;
 import "hardhat/console.sol";
 
 import "../libraries/constants/Roles.sol";
-import "../libraries/dataTypes/primitives/Address.sol";
-import "../libraries/security/Context.sol";
-import "../libraries/dataTypes/collections/EnumerableSet.sol";
+// import "../libraries/dataTypes/primitives/Address.sol";
+// import "../libraries/security/Context.sol";
+// import "../libraries/dataTypes/collections/EnumerableSet.sol";
 
 /**
  * @dev Contract module that allows children to implement role-based access
@@ -45,9 +45,9 @@ import "../libraries/dataTypes/collections/EnumerableSet.sol";
  */
 abstract contract RoleBasedAccessControl {
 
-    using EnumerableSet for EnumerableSet.AddressSet;
-    using EnumerableSet for EnumerableSet.Bytes32Set;
-    using Address for address;
+    // using EnumerableSet for EnumerableSet.AddressSet;
+    // using EnumerableSet for EnumerableSet.Bytes32Set;
+    // using Address for address;
 
     /**
      * @dev Emitted when `newAdminRole` is set as ``role``'s admin role, replacing `previousAdminRole`
@@ -57,11 +57,11 @@ abstract contract RoleBasedAccessControl {
      *
      * _Available since v3.1._
      */
-    event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);
+    // event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);
 
-    event RoleAdpproverChanged(bytes32 indexed role, bytes32 indexed previousApproverRole, bytes32 indexed newApproverRole);
+    // event RoleAdpproverChanged(bytes32 indexed role, bytes32 indexed previousApproverRole, bytes32 indexed newApproverRole);
 
-    event RestrictedSharedRoleAdded( bytes32 indexed roleWithRestrictedSharedRole, bytes32 indexed addedRestrictedSharedRole );
+    // event RestrictedSharedRoleAdded( bytes32 indexed roleWithRestrictedSharedRole, bytes32 indexed addedRestrictedSharedRole );
 
     /**
      * @dev Emitted when `account` is granted `role`.
@@ -69,11 +69,11 @@ abstract contract RoleBasedAccessControl {
      * `sender` is the account that originated the contract call, an admin role
      * bearer except when using {_setupRole}.
      */
-    event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);
+    // event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);
 
-    event RoleApproved( bytes32 indexed role, address indexed approver, address indexed account );
+    // event RoleApproved( bytes32 indexed role, address indexed approver, address indexed account );
 
-    event ApprovalRevoked( bytes32 indexed role, address indexed approver, address indexed disapprovedAccount );
+    // event ApprovalRevoked( bytes32 indexed role, address indexed approver, address indexed disapprovedAccount );
 
     /**
      * @dev Emitted when `account` is revoked `role`.
@@ -82,25 +82,25 @@ abstract contract RoleBasedAccessControl {
      *   - if using `revokeRole`, it is the admin role bearer
      *   - if using `renounceRole`, it is the role bearer (i.e. `account`)
      */
-    event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);
+    // event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);
 
-    modifier onlyRole( bytes32 role_ ) {
-        require( hasRole( role_, Context._msgSender() ), "RoleBasedAccessControl: account for not has authroized role for action." );
-        _;
-    }
+    // modifier onlyRole( bytes32 role_ ) {
+    //     require( hasRole( role_, Context._msgSender() ), "RoleBasedAccessControl: account for not has authroized role for action." );
+    //     _;
+    // }
 
     // modifier notRole( bytes32 role_ ) {
     //     require( !hasRole( role_, Context._msgSender() ) );
     //     _;
     // }
     
-    struct RoleData {
-        EnumerableSet.AddressSet members;
-        bytes32 adminRole;
-        bytes32 approverRole;
-        EnumerableSet.Bytes32Set restrictedSharedRoles;
-        mapping(address => bool) roleApproval;
-    }
+    // struct RoleData {
+    //     EnumerableSet.AddressSet members;
+    //     bytes32 adminRole;
+    //     bytes32 approverRole;
+    //     EnumerableSet.Bytes32Set restrictedSharedRoles;
+    //     mapping(address => bool) roleApproval;
+    // }
 
     mapping (bytes32 => RoleData) private _roles;
 

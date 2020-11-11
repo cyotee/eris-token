@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity 0.7.4;
 
-import "./Context.sol";
+import "hardhat/console.sol";
+
+import "../libraries/security/Context.sol";
 import "../interfaces/IERC20.sol";
-import "../libraries/utils/math/SafeMath.sol";
-import "../libraries/datatypes/primitives/Address.sol";
+import "../libraries/math/SafeFullMath.sol";
 
 /**
  * @dev Implementation of the {IERC20} interface.
@@ -31,9 +31,8 @@ import "../libraries/datatypes/primitives/Address.sol";
  * functions have been added to mitigate the well-known issues around setting
  * allowances. See {IERC20-approve}.
  */
-contract ERC20 is Context, IERC20 {
-    using SafeMath for uint256;
-    using Address for address;
+abstract contract ERC20 is IERC20 {
+    using SafeFullMath for uint256;
 
     mapping (address => uint256) private _balances;
 
@@ -54,16 +53,26 @@ contract ERC20 is Context, IERC20 {
      * All three of these values are immutable: they can only be set once during
      * construction.
      */
-    constructor ( string memory name_, string memory symbol_ ) {
+    constructor ( string memory name_, string memory symbol_, uint8 decimals_ ) {
+        
+        console.log( "Instantiating ERC20." );
+        console.log( "Setting _name to %s.", name_ );
         _name = name_;
+        console.log( "Set _name to %s.", name() );
+        console.log( "Setting _symbol to %s.", symbol_ );
         _symbol = symbol_;
-        _decimals = 18;
+        console.log( "Set _symbol to %s.", symbol() );
+        console.log( "Setting _decimals to %s.", decimals_ );
+        _decimals = decimals_;
+        console.log( "Set _decimals to %s.", decimals() );
+        console.log( "Instantiating ERC20." );
     }
 
     /**
      * @dev Returns the name of the token.
      */
     function name() public view returns (string memory) {
+        console.log( "Returning _name value of %s.", _name );
         return _name;
     }
 
@@ -72,6 +81,7 @@ contract ERC20 is Context, IERC20 {
      * name.
      */
     function symbol() public view returns (string memory) {
+        console.log( "Returning _name value of %s.", _symbol );
         return _symbol;
     }
 
@@ -89,6 +99,7 @@ contract ERC20 is Context, IERC20 {
      * {IERC20-balanceOf} and {IERC20-transfer}.
      */
     function decimals() public view returns (uint8) {
+        console.log( "Returning _name value of %s.", _decimals );
         return _decimals;
     }
 
@@ -96,6 +107,7 @@ contract ERC20 is Context, IERC20 {
      * @dev See {IERC20-totalSupply}.
      */
     function totalSupply() public view override returns (uint256) {
+        console.log( "Returning _name value of %s.", _totalSupply );
         return _totalSupply;
     }
 
@@ -103,8 +115,10 @@ contract ERC20 is Context, IERC20 {
      * @dev See {IERC20-balanceOf}.
      */
     function balanceOf(address account) public view override returns (uint256) {
+        console.log("Returning %s as balanceOf for %s.", _balances[account], account);
         return _balances[account];
     }
+
 
     /**
      * @dev See {IERC20-transfer}.
@@ -115,7 +129,7 @@ contract ERC20 is Context, IERC20 {
      * - the caller must have a balance of at least `amount`.
      */
     function transfer(address recipient, uint256 amount) public virtual override returns (bool) {
-        _transfer(_msgSender(), recipient, amount);
+        _transfer( Context._msgSender(), recipient, amount);
         return true;
     }
 
@@ -134,7 +148,7 @@ contract ERC20 is Context, IERC20 {
      * - `spender` cannot be the zero address.
      */
     function approve(address spender, uint256 amount) public virtual override returns (bool) {
-        _approve(_msgSender(), spender, amount);
+        _approve( Context._msgSender(), spender, amount );
         return true;
     }
 
@@ -142,9 +156,10 @@ contract ERC20 is Context, IERC20 {
      * @dev See {IERC20-transferFrom}.
      *
      * Emits an {Approval} event indicating the updated allowance. This is not
-     * required by the EIP. See the note at the beginning of {ERC20};
+     * required by the EIP. See the note at the beginning of {ERC20}.
      *
      * Requirements:
+     *
      * - `sender` and `recipient` cannot be the zero address.
      * - `sender` must have a balance of at least `amount`.
      * - the caller must have allowance for ``sender``'s tokens of at least
@@ -152,7 +167,7 @@ contract ERC20 is Context, IERC20 {
      */
     function transferFrom(address sender, address recipient, uint256 amount) public virtual override returns (bool) {
         _transfer(sender, recipient, amount);
-        _approve(sender, _msgSender(), _allowances[sender][_msgSender()].sub(amount, "ERC20: transfer amount exceeds allowance"));
+        _approve(sender, Context._msgSender(), _allowances[sender][Context._msgSender()].sub(amount, "ERC20: transfer amount exceeds allowance"));
         return true;
     }
 
@@ -169,7 +184,7 @@ contract ERC20 is Context, IERC20 {
      * - `spender` cannot be the zero address.
      */
     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {
-        _approve(_msgSender(), spender, _allowances[_msgSender()][spender].add(addedValue));
+        _approve(Context._msgSender(), spender, _allowances[Context._msgSender()][spender].add(addedValue));
         return true;
     }
 
@@ -188,7 +203,7 @@ contract ERC20 is Context, IERC20 {
      * `subtractedValue`.
      */
     function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {
-        _approve(_msgSender(), spender, _allowances[_msgSender()][spender].sub(subtractedValue, "ERC20: decreased allowance below zero"));
+        _approve(Context._msgSender(), spender, _allowances[Context._msgSender()][spender].sub(subtractedValue, "ERC20: decreased allowance below zero"));
         return true;
     }
 
@@ -222,7 +237,7 @@ contract ERC20 is Context, IERC20 {
      *
      * Emits a {Transfer} event with `from` set to the zero address.
      *
-     * Requirements
+     * Requirements:
      *
      * - `to` cannot be the zero address.
      */
@@ -242,7 +257,7 @@ contract ERC20 is Context, IERC20 {
      *
      * Emits a {Transfer} event with `to` set to the zero address.
      *
-     * Requirements
+     * Requirements:
      *
      * - `account` cannot be the zero address.
      * - `account` must have at least `amount` tokens.
