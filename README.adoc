@@ -1,0 +1,96 @@
+= eris-token
+
+10% of LGE Ethereum as dev fee — I is broke doge. I’m not a Clinton, so running a charity doesn’t make me money.
+
+10,000 total supply, probably poll still open on Twitter.
+https://twitter.com/NCyotee/status/1319594404739338241
+
+LGE for liquidity. Probably 48 hours. — Poll on Twitter.
+https://twitter.com/NCyotee/status/1319667943878262786
+
+1% dev fee on transfers to The Church of the Chain Incorporated. Consult your accountant and lawyer on whether this would be tax deductible.
+
+1% transfer fee — This is where the fun starts
+
+50% chance fee is burned
+
+50% chance fee is transferred to Uniswap pair.
+
+— — — — — — — — — — — — — — — — — — — — — — — — — — — — — — —
+
+Next person to trade SHOULD get
+
+Sell — higher slippage
+
+Buy — reduced slippage
+
+Deposit — extra LP tokens
+
+AGAIN NO IDEA HOW THIS WILL PLAY OUT.
+
+NO INTENTION OF FUTURE DEVELOPMENT. MAY PUT THIS UNDER $CHAINS IF IT DOESN’T COMPLETELY FLOP. BUT NO PROMISES.
+
+NO I CAN’T REIMBURSE YOU OR DO ANYTHING TO RESOLVE THIS IF IT DOES FLOP.
+
+YOU’VE BEEN WARNED.
+
+NO REALLY, YOU’VE BEEN WARNED.
+
+SERIOUSLY DON’T BUY $ERIS UNLESS YOU WANT TO FUCK WITH PEOPLE.
+
+THIS CLEARLY ISN’T FINANCIAL ADVICE. THIS THING ISN’T EVEN FINANCIAL. IT’S A JOKE.
+
+
+
+
+== environment installation
+
+npm init --yes 
+
+npm install -g truffle \
+    ganache-cli \
+    mkdirp \
+    solc \
+    truffle-flattener \
+    windows-build-tools \
+    node-gyp \
+    ethlint \
+    truffle-security
+
+truffle init
+
+npm install --save-dev hardhat @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers mocha @nomiclabs/hardhat-truffle5 @nomiclabs/hardhat-web3 web3 @openzeppelin/test-helpers @nomiclabs/hardhat-ganache @nomiclabs/hardhat-solpp @nomiclabs/hardhat-solhint solidity-coverage hardhat-gas-reporter @openzeppelin/contracts-ethereum-package nyc @nomiclabs/hardhat-etherscan @nomiclabs/hardhat-solpp @uniswap/v2-periphery @openzeppelin/buidler-upgrades @openzeppelin/truffle-upgrades
+
+npm install truffle-assertions @uniswap/v2-core @uniswap/lib @openzeppelin/contracts solidity-docgen buidler-source-descriptor solhint
+
+pip3 install seqdiag
+
+--------------------------------------------------------------------------------------------------------
+
+= Environment Setup
+
+npm install -g truffle ganache-cli mkdirp solc truffle-flattenerwindows-build-tools node-gyp
+
+npm install --save-dev hardhat chai ethers mocha ethereum-waffle @nomiclabs/hardhat-ethers @nomiclabs/hardhat-waffle @nomiclabs/hardhat-truffle5 @nomiclabs/hardhat-web3 web3 @openzeppelin/test-helpers
+
+npm install @uniswap/v2-core @uniswap/lib @openzeppelin/contracts truffle-assertions
+
+--------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+npm install -gethlint solhint @mycrypto/ganache-toolbox
+
+npm install @uniswap/v2-core @uniswap/lib @openzeppelin/contracts 
+
+
+npm install --save-dev  mocha @nomiclabs/hardhat-etherscan solidity-coverage @nomiclabs/hardhat-truffle5 @nomiclabs/hardhat-web3 web3 @nomiclabs/hardhat-solhint @nomiclabs/hardhat-vyper @nomiclabs/hardhat-solpp @tenderly/hardhat-tenderly @nomiclabs/hardhat-docker solidity-coverage
+
+yarn add --dev hardhat-abi-exporter
+
+npm install ganache-time-traveler
+
+npx hardhat --network ganache test
+
+npm install -g --save-dev solc hardhat @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers ethlint solhint @uniswap/v2-core @nomiclabs/buidler @uniswap/lib @openzeppelin/contracts @nomiclabs/hardhat-ganache mocha @nomiclabs/hardhat-etherscan solidity-coverage @nomiclabs/hardhat-truffle5 @nomiclabs/hardhat-web3 web3
+
+npm install -save-dev solc hardhat @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers ethlint solhint @uniswap/v2-core @nomiclabs/buidler @uniswap/lib @openzeppelin/contracts @nomiclabs/hardhat-ganache mocha @nomiclabs/hardhat-etherscan solidity-coverage @nomiclabs/hardhat-truffle5 @nomiclabs/hardhat-web3 web3

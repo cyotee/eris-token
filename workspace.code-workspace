@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "old"
+		},
+		{
+			"path": "..\\openzeppelin-contracts"
+		}
+	],
+	"settings": {
+		"solidity.compileUsingRemoteVersion": "v0.7.4+commit.3f05b770",
+		"cSpell.words": [
+			"chmod"
+		]
+	}
+}

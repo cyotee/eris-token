@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "waffle"
+  },
+  "compilerType": "solc",
+  "compilerVersion": "0.7.4",
+  "sourceDirectory": "./contracts",
+  "outputDirectory": "./build",
+  "flattenOutputDirectory": "./flattened"
+}
