@@ -1,5 +1,71 @@
 = eris-token
 
+cyotee doge, [12.11.20 02:43]
+Well, I figured while it's nice to locked the LP in the contract so it can be fucked with, why just let the LP tokens rot in there?
+
+cyotee doge, [12.11.20 02:44]
+So, NFY wraps other tokens in a NFT to let you trade tokens that are accruing rewards from something else. Like LP or staking. This way you can trade those, while they're still locked or staked.
+
+cyotee doge, [12.11.20 02:47]
+Since it's relatively easy to integrate with them, and having a ecosystem on launch will help this succeed, NFY is helping to add in a way to buy ERIS LP tokens wrapped in a NFT. This way, they're still locked, but can accrue in value.
+
+cyotee doge, [12.11.20 02:48]
+Nope, but there's more.
+
+cyotee doge, [12.11.20 02:48]
+A feature we're adding in to make ERIS even more deflationary.
+
+cyotee doge, [12.11.20 02:49]
+Later on, after the sale, people will be able to buy ERIS, and use that to buy one of the NFTs with a number of LP tokens that hold the same amount of ERIS. basically, getting the ETH paired with it as a bonus for buying. And we just burn the ERIS that use to buy the NFT. Mind, you they can't get the LP directly.
+
+cyotee doge, [12.11.20 02:51]
+Later on, if people do want to realize profit, then can redeem the ERIS LP NFT "bond". The contract will withdraw the LP tokens in the NFT, sell the ERIS on the market to get ETH, and give that newly bought ETH to the redeemer. Then, it takes the ETH that it withdrew from LP, uses half of it to buy ERIS off the market, and redeposits into LP.
+
+cyotee doge, [12.11.20 02:54]
+This way, the LP is more controlled. No way to rug, as there is no other way to get the LP tokens. And it protects against an immediate dump by setting a sell back process that will end up losing you money, if you don't hold onto it long enough for the price to go up enough the effectively let the "bond" "mature". Redeem too early, and all you do if further constrict the supply at a loss. Redeem once the price has risen enough, get your stake and  profit back. But al help constrict the supply, and make sure you put at least the capital back in LP. Which is basically just good trading strategy.
+
+cyotee doge, [12.11.20 02:56]
+So, you'll get ERIS. And you can go trade ERIS. Or, you can buy a NFT bond, constrict the supply, and have a tradable asset you can trade with others, like on NFY's exchange that will accrue in value, and will mature once the price goes up enough.
+
+cyotee doge, [12.11.20 02:58]
+This should make ERIS a more complete product. And help ensure that it won't suffer from an early drop in price. While not wasting the market potential in the LP tokens. Best of both. Locked LP, that can mature once the token is profitable enough to not be hurt by realizing profit. Basically, like more traditional bond or vesting models.
+
+cyotee doge, [12.11.20 02:58]
+Welcome to how defi venture capital works.
+
+cyotee doge, [12.11.20 03:01]
+Because the first service we're offering as the revenue generator for the ecosystem is a generalized sale platform using the same pricing model I am using for ERIS. Like how we're doing things, Bring your token before deployment, integrate with our sale contract in your code. We'll help you do it. And run your sale, including all the same features as ERIS if you want. And we'll get you securely listed on Uniswap, and later other exchanges. All for the low low price of 0.1% of the total supply of the token you sell, and the token you accept as payment.
+
+cyotee doge, [12.11.20 03:02]
+Universal Quadratic Pricing Liquidity Genesis Minting Event Bounce.
+
+cyotee doge, [12.11.20 03:03]
+Oh, and look at our Universal Role based Authorization and transaction timelock system you can use for free if you want.
+
+cyotee doge, [12.11.20 03:04]
+With an event broadcasting system, so you can show your buyers that your legit and completely transparent by announcing your contracts activity through this. For free. I'll have integrations we run that will post the events on various social media channels. For free.
+
+cyotee doge, [12.11.20 03:05]
+And show you how to set up your own monitoring integrations using simple service you can mange yourself.
+
+cyotee doge, [12.11.20 03:07]
+And if you like all that, and want me and the team to do more, just buy ERIS. Hold ERIS. Trade ERIS. We'll handle the safely managed profit realization for our budgets through the same bond system. So we can never dump on you, but can still get funds to pay the bills.
+
+cyotee doge, [12.11.20 03:11]
+Oh, and you guys like another token, and want to add it to the bond, we can hold another sale, accept that other token for the sale. And deposit it in an exchange we integrate with. So we can grow and acquire assets if you want. But the sale system is under strict control. When I deploy, I won't be able to turn it on again after the first time unless a multisig authorizes the transaction. And even then, it will be on time delay. And you'll be told on social media that a new sale will be opening in the future. If there is anew sale, then my address will be refused trading activity until the new sale is done. Thus minimizing my ability to game the system.
+
+cyotee doge, [12.11.20 03:13]
+Pardon as I, and the devs I've recently enlisted, they'll be joining once they complete some work, mold this into a fully realized asset management and sale security service ecosystem.
+
+cyotee doge, [12.11.20 03:15]
+Shouldn't be too much longer. More devs are joining me. And I already have most of the pieces in place. just need to put ti all together, and test it.
+
+cyotee doge, [12.11.20 03:19]
+The proceeds of this will be donated to the charity supporting AuditDAO to complete the formation,, development of the code, and pay for the services to realize AuditDAO. Lawyers cost real money.
+
+cyotee doge, [12.11.20 03:19]
+Once that work is done, AuditDAO will accept ERIS and ETH, at least during it's pre-sale. And will use a similar sale model. If this works out well.
+
 10% of LGE Ethereum as dev fee — proceeds will be donated to charity.
 I’m not a Clinton, so running a charity doesn’t make me money.
 

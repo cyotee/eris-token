@@ -34,7 +34,7 @@ library AuthorizationDatastoreEvents {
 
     event RoleAdpproverChanged( address indexed contract, bytes32 indexed role, bytes32 indexed approverRole, bytes32 indexed newApproverRole );
 
-    event RestrictedSharedRoleAdded( address indexed contract, bytes32 role, bytes32 restrictedSharedRole );
+    event RestrictedSharedRoleAdded( address indexed contract, bytes32 indexed role, bytes32 indexed restrictedSharedRole );
 
     event NewContractRegistered( address indexed newRegisteredContract, bytes32 indexed rootRole, address indexed rootAdminAddress );
 }

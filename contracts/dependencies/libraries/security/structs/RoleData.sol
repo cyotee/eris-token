@@ -4,22 +4,23 @@ pragma solidity 0.7.4;
 import "hardhat/console.sol";
 
 import "../../primitives/Address.sol";
-import "../../libraries/security/Context.sol";
 import "../libraries/dataTypes/collections/EnumerableSet.sol";
+import "../libraries/dataTypes/collections/AddressSet.sol";
+import "../libraries/dataTypes/collections/Bytes32Set.sol";
 
 /**
  * RoleData datatype for reus in authroization system.
  */
 library RoleData {
 
-    using EnumerableSet for EnumerableSet.AddressSet;
-    using EnumerableSet for EnumerableSet.Bytes32Set;
+    using AddressSet for AddressSet.AddressSet;
+    using Bytes32Set for Bytes32Set.Bytes32Set;
 
     struct RoleData {
-        EnumerableSet.AddressSet members;
+        AddressSet.AddressSet members;
         bytes32 adminRole;
         bytes32 approverRole;
-        EnumerableSet.Bytes32Set restrictedSharedRoles;
+        Bytes32Set.Bytes32Set restrictedSharedRoles;
         mapping(address => bool) roleApproval;
     }
 

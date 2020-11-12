@@ -5,6 +5,7 @@ import "hardhat/console.sol";
 
 import "../dependencies/libraires/datatypes/security/structs/RoleData.sol";
 import "../dependencies/libraires/datatypes/security/events/AuthorizationDatastoreEvents.sol";
+import "../eventBroadcaster/interfaces/IEventBroadcaster.sol";
 
  /**
   * Conract to store the role authorization data for the rest of the platform.
@@ -21,6 +22,7 @@ contract AuthorizationDatastore {
     }
 
     address private authorizationPlatform;
+    IEventBroadcaster private eventBroadcaster;
 
     // Needs to be updated to track RoleData by role as bytes32 by contract address that RolData is for.
     mapping( address => RoleData.ContractRoles ) private _contractRoles;
@@ -30,8 +32,13 @@ contract AuthorizationDatastore {
         console.log( "Instantiated AuthorizationDatastore." );
     }
 
+    function eventBroadcaster() public view returns ( address ) {
+        return address( eventBroadcaster );
+    }
+
+    // TODO needs to confirm registered contracts are actuall contracts.
     function registerContract( address contractToRegister_, bytes32 rootRole_, address newRootAddress_ ) public onlyPlatform() {
-        emit NewContractRegistered( contractToRegister_,  rootRole_, newRootAddress_ );
+        
         _contractRoles[contractToRegister_].roles[adminRole_].roleApproval[newRootAddress_] = true;
         _contractRoles[contractToRegister_].roles[adminRole_].members.add(newRootAddress_);
         _contractRoles[contractToRegister_].rootRole = rootRole_;
@@ -61,13 +68,11 @@ contract AuthorizationDatastore {
 
     function addRestrictedSharedRoles( address contract_, address submitter, bytes32 role, bytes32 restrictedSharedRole ) public onlyPlatform() {
         require( _contractRoles[contract_].roles[_contractRoles[contract_].rootRole].members.contains(submitter_) );
-        emit AuthorizationDatastoreEvents.RestrictedSharedRoleAdded( role, restrictedSharedRole );
-        _contractRoles[contract_].roles[role].restrictedSharedRoles.add( restrictedSharedRole );
     }
 
-    function _addRestrictedSharedRoles( bytes32 role, bytes32 restrictedSharedRole ) internal virtual {
-        emit AuthorizationDatastoreEvents.RestrictedSharedRoleAdded( role, restrictedSharedRole );
-        _roles[role].restrictedSharedRoles.add( restrictedSharedRole );
+    function _addRestrictedSharedRoles( address contract_, address submitter_, bytes32 role_, bytes32 restrictedSharedRole_ ) internal virtual {
+        emit AuthorizationDatastoreEvents.RestrictedSharedRoleAdded( contract_, role_, restrictedSharedRole_ );
+        _contractRoles[contract_].roles[role].restrictedSharedRoles.add( restrictedSharedRole );
     }
 
     /**
