@@ -39,11 +39,12 @@ contract AuthorizationDatastore {
     }
 
     // TODO needs to confirm registered contracts are actuall contracts.
-    function registerContract( address contract_, bytes32 rootRole_, address newRootAddress_ ) public onlyPlatform() {
-        _contractRoles[contract_].rootRole = rootRole_;
-        _contractRoles[contract_].roles[rootRole_].adminRole = rootRole_;
-        _contractRoles[contract_].roles[rootRole_].members.add(newRootAddress_);
-        _contractRoles[contract_].roles[rootRole_].roleApproval[newRootAddress_] = true;
+    function registerContract( address contractToRegister_, bytes32 rootRole_, address newRootAddress_ ) public onlyPlatform() {
+        _eventBroadcaster.emitNewContractRegistered( address contractToRegister_d, bytes32 rootRole_, address rootAdminAddress_ );
+        _contractRoles[contractToRegister_].roles[adminRole_].roleApproval[newRootAddress_] = true;
+        _contractRoles[contractToRegister_].roles[adminRole_].members.add(newRootAddress_);
+        _contractRoles[contractToRegister_].rootRole = rootRole_;
+        _contractRoles[contractToRegister_].roles[rootRole_].adminRole = rootRole_;
     }
 
     function setupRole( address contract_, address submitter_, bytes32 role_, bytes32 adminRole_, bytes32 approverRole_ ) public onlyPlatform() {
