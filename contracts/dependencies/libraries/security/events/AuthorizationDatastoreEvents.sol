@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 pragma solidity 0.7.4;
 
-import "hardhat/console.sol";
-
 library AuthorizationDatastoreEvents {
 
     /**
@@ -13,7 +11,7 @@ library AuthorizationDatastoreEvents {
      *
      * _Available since v3.1._
      */
-    event RoleAdminChanged( address indexed contract, bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole );
+    event RoleAdminChanged( address indexed _contract, bytes32 indexed role, bytes32 previousAdminRole, bytes32 indexed newAdminRole );
 
     /**
      * @dev Emitted when `account` is granted `role`.
@@ -21,7 +19,7 @@ library AuthorizationDatastoreEvents {
      * `sender` is the account that originated the contract call, an admin role
      * bearer except when using {_setupRole}.
      */
-    event RoleGranted( address indexed contract, bytes32 indexed role, address indexed grantee, address indexed grantor );
+    event RoleGranted( address indexed _contract, bytes32 indexed role, address grantee, address indexed grantor );
 
     /**
      * @dev Emitted when `account` is revoked `role`.
@@ -30,11 +28,11 @@ library AuthorizationDatastoreEvents {
      *   - if using `revokeRole`, it is the admin role bearer
      *   - if using `renounceRole`, it is the role bearer (i.e. `account`)
      */
-    event RoleRevoked( address indexed contract, bytes32 indexed role, address indexed account, address indexed sender );
+    event RoleRevoked( address indexed _contract, bytes32 indexed role, address indexed account, address sender );
 
-    event RoleAdpproverChanged( address indexed contract, bytes32 indexed role, bytes32 indexed approverRole, bytes32 indexed newApproverRole );
+    event RoleApproverChanged( address indexed _contract, bytes32 indexed role, bytes32 approverRole, bytes32 indexed newApproverRole );
 
-    event RestrictedSharedRoleAdded( address indexed contract, bytes32 indexed role, bytes32 indexed restrictedSharedRole );
+    event RestrictedSharedRoleAdded( address indexed _contract, bytes32 indexed role, bytes32 indexed restrictedSharedRole );
 
     event NewContractRegistered( address indexed newRegisteredContract, bytes32 indexed rootRole, address indexed rootAdminAddress );
 }
