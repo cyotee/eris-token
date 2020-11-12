@@ -1,5 +1,38 @@
 = eris-token
 
+pricing and supply model:
+https://docs.google.com/spreadsheets/d/1AAUvcc5NXy6EZ6kb12YqzFgnv16eT5oGl_IIHkqy-94/edit?usp=sharing
+
+sale model formulas:
+
+Applied 
+function amountFromQPNSqrRoot( amountPaid, multiplier ){
+  var nthAmount = amountPaid * multiplier;
+  return Math.sqrt(nthAmount, multiplier);
+}
+
+function amountFromQPNPowNRoot( amountPaid, multiplier ){
+  var nthAmount = amountPaid * multiplier;
+  return nthroot(nthAmount, multiplier);
+}
+
+function amountFromQPCube( amountPaid ){
+  var squareAmount = amountPaid * 3;
+  return Math.cbrt(squareAmount);
+}
+
+function nthroot(x, n) {
+  try {
+    var negate = n % 2 == 1 && x < 0;
+    if(negate)
+      x = -x;
+    var possible = Math.pow(x, 1 / n);
+    n = Math.pow(possible, n);
+    if(Math.abs(x - n) < 1 && (x > 0 == n > 0))
+      return negate ? -possible : possible;
+  } catch(e){}
+}
+
 cyotee doge, [12.11.20 02:43]
 Well, I figured while it's nice to locked the LP in the contract so it can be fucked with, why just let the LP tokens rot in there?
 

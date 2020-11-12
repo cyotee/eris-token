@@ -28,6 +28,6 @@ contract EventBroadcaster is IEventBroadcaster {
     function emitRestrictedSharedRoleAdded( address contract_, bytes32 role_, bytes32 restrictedSharedRole_ );
 
     function emitNewContractRegistered( address newRegisteredContract_, bytes32 rootRole_, address rootAdminAddress_ ) {
-        emit NewContractRegistered( contractToRegister_,  rootRole_, newRootAddress_ );
+        emit AuthorizationDatastoreEvents.NewContractRegistered( contractToRegister_,  rootRole_, newRootAddress_ );
     }
 }

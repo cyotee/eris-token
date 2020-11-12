@@ -21,13 +21,13 @@ contract AuthorizationDatastore {
         _;
     }
 
-    address private authorizationPlatform;
-    IEventBroadcaster private eventBroadcaster;
+    address private _authorizationPlatform;
+    IEventBroadcaster private _eventBroadcaster;
 
-    // Needs to be updated to track RoleData by role as bytes32 by contract address that RolData is for.
     mapping( address => RoleData.ContractRoles ) private _contractRoles;
 
-    constructor() {
+    // TODO Needs integration to register itself for authorization so event boradcaster and authoirzation platform addresaes can be updated
+    constructor( address ) {
         console.log( "Instantiating AuthorizationDatastore." );
         console.log( "Instantiated AuthorizationDatastore." );
     }
