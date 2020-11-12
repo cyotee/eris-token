@@ -23,7 +23,7 @@ contract EventBroadcaster is IEventBroadcaster {
 
     function emitRoleRevoked( address contract_, bytes32 role_, address account_, address sender_ );
 
-    function emitRoleAdpproverChanged( address contract_, bytes32 role_, bytes32 approverRole_, bytes32 newApproverRole_ );
+    function emitRoleApproverChanged( address contract_, bytes32 role_, bytes32 approverRole_, bytes32 newApproverRole_ );
 
     function emitRestrictedSharedRoleAdded( address contract_, bytes32 role_, bytes32 restrictedSharedRole_ );
 

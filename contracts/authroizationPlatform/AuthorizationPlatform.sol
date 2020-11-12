@@ -101,10 +101,13 @@ contract AuthorizationPlatform {
     function grantRole(bytes32 role, address account) public virtual {
         console.log("RoleBasedAccessControl::grantRole checking that %s is approved to have role.", account );
         require( _isApproveForRole( role, account ), "RoleBasedAccessControl::grantRole Address is not approved for role." );
+        
         console.log("RoleBasedAccessControl::grantRole checking that %s is admin to set role.", Context._msgSender());
         require(hasRole(_roles[role].adminRole, Context._msgSender()), "RoleBasedAccessControl: sender must be an admin to grant");
+        
         console.log("RoleBasedAccessControl::grantRole checking that %s does not have any restricted shared roles for role.", account);
         require( !hasRestrictedSharedRole( role, account ), "RoleBasedAccessControl::grantRole account has restrictedSharedRoles with role." );
+        
         console.log("RoleBasedAccessControl::grantRole Granting %s role.", account);
         _grantRole(role, account);
         console.log("RoleBasedAccessControl::grantRole Granted %s role.", account);

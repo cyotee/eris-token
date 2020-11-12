@@ -1,15 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 pragma solidity 0.7.4;
 
-import "hardhat/console.sol";
-
-import "../../primitives/Address.sol";
-import "../libraries/dataTypes/collections/EnumerableSet.sol";
 import "../libraries/dataTypes/collections/AddressSet.sol";
 import "../libraries/dataTypes/collections/Bytes32Set.sol";
 
+// TODO: Better description
+// TODO: RoleData - roleApproval bool should be a struct containing data about who approved etc. for more information .
+
 /**
- * RoleData datatype for reus in authroization system.
+ * @notice Datatype for reuse in the authroization system.
  */
 library RoleData {
 
@@ -17,16 +16,16 @@ library RoleData {
     using Bytes32Set for Bytes32Set.Bytes32Set;
 
     struct RoleData {
-        AddressSet.AddressSet members;
         bytes32 adminRole;
         bytes32 approverRole;
+        AddressSet.AddressSet members;
         Bytes32Set.Bytes32Set restrictedSharedRoles;
         mapping(address => bool) roleApproval;
     }
 
     struct ContractRoles {
-        mapping( bytes32 => RoleData ) roles;
         bytes32 rootRole;
+        mapping(bytes32 => RoleData) roles;
     }
 
 }

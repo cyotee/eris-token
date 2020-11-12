@@ -14,9 +14,13 @@ interface IEventBroadcaster {
 
     function emitRoleRevoked( address contract_, bytes32 role_, address account_, address sender_ );
 
-    function emitRoleAdpproverChanged( address contract_, bytes32 role_, bytes32 approverRole_, bytes32 newApproverRole_ );
+    function emitRoleApproverChanged( address contract_, bytes32 role_, bytes32 approverRole_, bytes32 newApproverRole_ );
 
     function emitRestrictedSharedRoleAdded( address contract_, bytes32 role_, bytes32 restrictedSharedRole_ );
 
     function emitNewContractRegistered( address newRegisteredContract_, bytes32 rootRole_, address rootAdminAddress_ );
+
+    function emitRoleMemberAdded();
+
+    function emitContractRoleCreated();
 }

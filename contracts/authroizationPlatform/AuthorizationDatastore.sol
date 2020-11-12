@@ -16,13 +16,14 @@ contract AuthorizationDatastore {
     using RoleData for RoleData.RoleData;
     using RoleData for RoleData.ContractRoles;
 
+    address private _authorizationPlatform;
+
+    IEventBroadcaster private _eventBroadcaster;
+
     modifier onlyPlatform() {
-        require( authorizationPlatform == _msgSender() );
+        require( _msgSender() == authorizationPlatform );
         _;
     }
-
-    address private _authorizationPlatform;
-    IEventBroadcaster private _eventBroadcaster;
 
     mapping( address => RoleData.ContractRoles ) private _contractRoles;
 
@@ -32,23 +33,23 @@ contract AuthorizationDatastore {
         console.log( "Instantiated AuthorizationDatastore." );
     }
 
+    // TODO: Better name to indicate that I'm getting an address type of the broadcaster
     function eventBroadcaster() public view returns ( address ) {
-        return address( eventBroadcaster );
+        return address( _eventBroadcaster );
     }
 
     // TODO needs to confirm registered contracts are actuall contracts.
-    function registerContract( address contractToRegister_, bytes32 rootRole_, address newRootAddress_ ) public onlyPlatform() {
-        
-        _contractRoles[contractToRegister_].roles[adminRole_].roleApproval[newRootAddress_] = true;
-        _contractRoles[contractToRegister_].roles[adminRole_].members.add(newRootAddress_);
-        _contractRoles[contractToRegister_].rootRole = rootRole_;
-        _contractRoles[contractToRegister_].roles[rootRole_].adminRole = rootRole_;
+    function registerContract( address contract_, bytes32 rootRole_, address newRootAddress_ ) public onlyPlatform() {
+        _contractRoles[contract_].rootRole = rootRole_;
+        _contractRoles[contract_].roles[rootRole_].adminRole = rootRole_;
+        _contractRoles[contract_].roles[rootRole_].members.add(newRootAddress_);
+        _contractRoles[contract_].roles[rootRole_].roleApproval[newRootAddress_] = true;
     }
 
     function setupRole( address contract_, address submitter_, bytes32 role_, bytes32 adminRole_, bytes32 approverRole_ ) public onlyPlatform() {
         require( _contractRoles[contract_].roles[_contractRoles[contract_].rootRole].members.contains(submitter_) );
-        _setRoleAdmin( contract_, role_, adminRole_ );
-        _setApproverRole( address contract_, bytes32 role_, bytes32 approverRole_ );
+        _setRoleAdmin( contract_, submitter_, role_, adminRole_ );
+        _setApproverRole( contract_, role_, approverRole_ );
     }
 
     /**
@@ -87,12 +88,16 @@ contract AuthorizationDatastore {
      */
     function grantRole( address contract, bytes32 role, address account ) public onlyPlatform() {
         console.log("RoleBasedAccessControl::grantRole checking that %s is approved to have role.", account );
+        
         require( _isApproveForRole( role, account ), "RoleBasedAccessControl::grantRole Address is not approved for role." );
         console.log("RoleBasedAccessControl::grantRole checking that %s is admin to set role.", Context._msgSender());
+        
         require(hasRole(_roles[role].adminRole, Context._msgSender()), "RoleBasedAccessControl: sender must be an admin to grant");
         console.log("RoleBasedAccessControl::grantRole checking that %s does not have any restricted shared roles for role.", account);
+        
         require( !hasRestrictedSharedRole( role, account ), "RoleBasedAccessControl::grantRole account has restrictedSharedRoles with role." );
         console.log("RoleBasedAccessControl::grantRole Granting %s role.", account);
+        
         _grantRole( contract role, account);
         console.log("RoleBasedAccessControl::grantRole Granted %s role.", account);
     }
@@ -138,7 +143,7 @@ contract AuthorizationDatastore {
      * together with {getRoleMember} to enumerate all bearers of a role.
      */
     function getRoleMemberCount(bytes32 role) public view returns (uint256) {
-        return _roles[role].members.length();
+        return _roles[role].members.length;
     }
 
     /**
