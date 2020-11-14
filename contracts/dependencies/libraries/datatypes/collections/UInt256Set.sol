@@ -3,11 +3,11 @@ pragma solidity 0.7.4;
 
 import "./EnumerableSet.sol";
 
-library Bytes32Set {
-
+library UInt256Set {
+    
     using EnumerbaleSet for EnumerabletSet.Set;
 
-    struct Bytes32Set {
+    struct UInt256Set {
         Set _inner;
     }
 
@@ -17,8 +17,8 @@ library Bytes32Set {
      * Returns true if the value was added to the set, that is if it was not
      * already present.
      */
-    function add(Bytes32Set storage set, bytes32 value) internal returns (bool) {
-        return set._inner._add(set._inner, value);
+    function add(UInt256Set storage set, uint256 value) internal returns (bool) {
+        return _add(set._inner, bytes32(value));
     }
 
     /**
@@ -27,22 +27,22 @@ library Bytes32Set {
      * Returns true if the value was removed from the set, that is if it was
      * present.
      */
-    function remove(Bytes32Set storage set, bytes32 value) internal returns (bool) {
-        return set._inner._remove(set._inner, value);
+    function remove(UInt256Set storage set, uint256 value) internal returns (bool) {
+        return _remove(set._inner, bytes32(value));
     }
 
     /**
      * @dev Returns true if the value is in the set. O(1).
      */
-    function contains(Bytes32Set storage set, bytes32 value) internal view returns (bool) {
-        return set._inner._contains(set._inner, value);
+    function contains(UInt256Set storage set, uint256 value) internal view returns (bool) {
+        return _contains(set._inner, bytes32(value));
     }
 
     /**
      * @dev Returns the number of values on the set. O(1).
      */
-    function length(Bytes32Set storage set) internal view returns (uint256) {
-        return set._inner._length(set._inner);
+    function length(UInt256Set storage set) internal view returns (uint256) {
+        return _length(set._inner);
     }
 
     /**
@@ -55,7 +55,7 @@ library Bytes32Set {
      *
      * - `index` must be strictly less than {length}.
      */
-    function at(Bytes32Set storage set, uint256 index) internal view returns ( bytes32 ) {
-        return set._inner._at(set._inner, index);
+    function at(UInt256Set storage set, uint256 index) internal view returns (uint256) {
+        return uint256(_at(set._inner, index));
     }
 }

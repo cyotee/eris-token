@@ -11,7 +11,7 @@ library AuthorizationDatastoreEvents {
      *
      * _Available since v3.1._
      */
-    event RoleAdminChanged( address indexed _contract, bytes32 indexed role, bytes32 previousAdminRole, bytes32 indexed newAdminRole );
+    event RoleAdminChanged( address indexed _contract, address submitter, bytes32 indexed role, bytes32 previousAdminRole, bytes32 indexed newAdminRole );
 
     /**
      * @dev Emitted when `account` is granted `role`.
@@ -30,9 +30,13 @@ library AuthorizationDatastoreEvents {
      */
     event RoleRevoked( address indexed _contract, bytes32 indexed role, address indexed account, address sender );
 
-    event RoleApproverChanged( address indexed _contract, bytes32 indexed role, bytes32 approverRole, bytes32 indexed newApproverRole );
+    event RoleRemoved( address indexed _contract, bytes32 indexed role, address indexed account, address sender );
+
+    event RoleApproverChanged( address indexed _contract, address submitter, bytes32 indexed role, bytes32 approverRole, bytes32 indexed newApproverRole );
 
     event RestrictedSharedRoleAdded( address indexed _contract, bytes32 indexed role, bytes32 indexed restrictedSharedRole );
 
     event NewContractRegistered( address indexed newRegisteredContract, bytes32 indexed rootRole, address indexed rootAdminAddress );
+
+    event CreatedRole( address indexed _contract, address indexed submitter, bytes32 role );
 }
