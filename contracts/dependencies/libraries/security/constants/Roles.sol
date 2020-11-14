@@ -12,4 +12,5 @@ library Roles {
     bytes32 internal constant ROOT_ROLE = keccak256( "ROOT_ROLE" );
     bytes32 internal constant PLATFORM_ADMIN_ROLE  = keccak256( "PLATFORM_ADMIN_ROLE" );
     bytes32 internal constant PLATFORM_ADMIN_OVERSIGHT_ROLE = keccak256( "PLATFORM_ADMIN_OVERSIGHT_ROLE" );
+    bytes32 internal constant MINTER_ROLE = keccak256("MINTER_ROLE");
 }

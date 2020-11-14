@@ -40,6 +40,8 @@ library TokenListingUniswapV2Compatible {
     // Not sure all these properties are needed.
     // Just added what seemed like a good idea now.
     struct SaleData {
+        bytes32 saleAdminRole;
+        bytes32 saleApprovalRole;
         bool saleActive;
         address listerAddress;
         address tokenForSale;
