@@ -16,6 +16,7 @@ import "hardhat/console.sol";
  * Using this library instead of the unchecked operations eliminates an entire
  * class of bugs, so it's recommended to use it always.
  */
+ // TODO needs versions for uint4, uint8, uint16, uint32, uint64, uint128, int4, int8, int16, int32, int64, int128, int256
 library Uint256 {
     /**
      * @dev Returns the addition of two unsigned integers, reverting on
