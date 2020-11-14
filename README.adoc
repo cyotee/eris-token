@@ -138,6 +138,7 @@ SERIOUSLY DON’T BUY $ERIS UNLESS YOU WANT TO FUCK WITH PEOPLE.
 THIS CLEARLY ISN’T FINANCIAL ADVICE. THIS THING ISN’T EVEN FINANCIAL. IT’S A JOKE.
 
 == environment installation
+**********************************************************************************
 
 npm init --yes 
 
@@ -146,6 +147,12 @@ npm install -g solc truffle-flattener
 npm install --save-dev hardhat @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers mocha @nomiclabs/hardhat-truffle5 @nomiclabs/hardhat-web3 web3 @openzeppelin/test-helpers hardhat-gas-reporter nyc @uniswap/v2-periphery
 
 npm install @uniswap/v2-core @uniswap/lib @openzeppelin/contracts solidity-docgen buidler-source-descriptor
+
+uxf diagrams created with UMLet using the below VSCode plugin.
+https://marketplace.visualstudio.com/items?itemName=TheUMLetTeam.umlet
+
+Original tool available here.
+https://www.umlet.com/
 
 ***********************************************************************************************************************************************
 npm install -g truffle \
