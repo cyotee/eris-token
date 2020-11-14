@@ -10,6 +10,11 @@ import "hardhat/console.sol";
 abstract contract AuthorizationPlatformClient {
 
     // Should be an interface for the AuthorizationPlatform.
-    address authorizationPlatform;
+    IAuthorizationPlatform private _authorizationPlatform;
+
+    modifier hasOnlyRole( bytes32 role_, address account_ ) {
+        require( _authorizationPlatform.hasRole( address(this), account_ ) );
+        _;
+    }
 
 }

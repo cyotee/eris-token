@@ -4,6 +4,7 @@ pragma solidity 0.7.4;
 import "hardhat/console.sol";
 
 import "../libraries/utils/listing/uniswapV2/TokenListingUniswapV2Compatible.sol";
+import "../dependencies/libraries/utils/time/interfaces/IDateTime.sol";
 
 /**
 Contract to execute the sale of a mintable token using a quadratic pricing model.
@@ -12,6 +13,8 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
 
     using TokenListingUniswapV2Compatible for TokenListingUniswapV2Compatible.TokenListing;
     using TokenListingUniswapV2Compatible for TokenListingUniswapV2Compatible.SaleData;
+
+    IDateTime private dateTimeCalculator;
 
     // Intended to hold DEX information in a form that can be maintained over time.
     mapping( address => address ) private _uniswapV2CompatibleExchangeRouterToFactoryMapping;
@@ -40,8 +43,9 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
         return bytes32(keccak256(abi.encodePacked(saleToken_, proceedsToken_, uniswapV2CompatibleRouterddress_)));
     }
 
+    // TODO needs function to convert Ethereum to WETH. Should used as early as possible when accepting payments.
+
     /**
-     * 
      * Sales for Ethereum will use the WETH token address.
      *  might need to save WETH address and use IWETH interface.
      */
@@ -79,9 +83,74 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
                     );
     }
 
-    // TODO needs sale scheduling function. Should use DateTime contract to accept human readable input and convert ot Unix datetime.
+    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    function scheduleSaleStart(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_, uint8 second_) public returns (bool) {
+        _saleDataMapping[saleID_].saleStartTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_, uint8 second_);
+    }
+    
+    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    function scheduleSaleStart(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_) public returns (bool) {
+        _saleDataMapping[saleID_].saleStartTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_);
+    }
 
-    // TODO needs sale start time query function. Should return raw Unix datetime.
+    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    function scheduleSaleStart(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_) public returns (bool) {
+        _saleDataMapping[saleID_].saleStartTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_);
+    }
+
+    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    function scheduleSaleStart(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_) public returns (bool) {
+        _saleDataMapping[saleID_].saleStartTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_;
+    }
+
+    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    function scheduleSaleStart(bytes32 saleID_, uint256 saleStartDateTime_) public returns (bool) {
+        _saleDataMapping[saleID_].saleStartTimeStamp = saleStartDateTime_;
+    }
+
+    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    function scheduleSaleEnd(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_, uint8 second_) public returns (bool) {
+        _saleDataMapping[saleID_].saleEndTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_, uint8 second_);
+    }
+
+    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    function scheduleSaleEnd(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_) public returns (bool) {
+        _saleDataMapping[saleID_].saleEndTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_);
+    }
+
+    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    function scheduleSaleEnd(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_) public returns (bool) {
+        _saleDataMapping[saleID_].saleStartTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_);
+    }
+
+    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    function scheduleSaleEnd(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_) public returns (bool) {
+        _saleDataMapping[saleID_].saleEndTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_);
+    }
+
+    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    function scheduleSaleEnd(bytes32 saleID_, uint256 saleEndTimeStamp_) public returns (bool) {
+        _saleDataMapping[saleID_].saleEndTimeStamp = saleEndTimeStamp_;
+    }
+
+    function getSaleStartDateTimeStamp(bytes32 saleID_) public returns (uint256) {
+        return _saleDataMapping[saleID_].saleStartTimeStamp;
+    }
+
+    function getSaleEndDateTimeStamp(bytes32 saleID_) public returns (uint256) {
+        return _saleDataMapping[saleID_].saleEndTimeStamp;
+    }
+
+    // TODO implement check that msg.sender has role to activate sale for token.
+    // TODO implement check to confirm sale approver has approved sale configuration.
+    function activateSale( bytes32 saleID_ ) public returns (bool) {
+        require( _saleDataMapping[saleID_].saleActivesaleActive ==  false );
+    }
+
+    // Intended to be called as part of collecting token from sale.
+    function _finalizeSale(bytes32 saleID) internal {
+        require( _saleDataMapping[saleID_].saleActivesaleActive ==  true && block.timestamp > _saleDataMapping[saleID_].saleEndTimeStamp );
+    }
 
     // TODO needs sale start time query function. Should return human readable date.
 
@@ -107,15 +176,6 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
 /*              Functions for reuse in platform reimplementation              */
 /* -------------------------------------------------------------------------- */
 
-    // address internal devAddress;
-    // address public charityAddress;
-
-    // uint256 public qplgmeStartTimestamp;
-    // uint256 public qplgmeEndTimestamp;
-    // bool public qplgmeActive = false;
-    // bool public hadQPLGME = false;
-    // uint256 public qplgmeLength = 3 days;
-    // uint256 public qplgmeLength = 30 minutes;
     // uint8 private _erisToEthRatio = 5;
     // uint8 private _transferFeePercentage = 10;
 
