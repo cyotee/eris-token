@@ -3,10 +3,6 @@ pragma solidity 0.7.4;
 
 import "hardhat/console.sol";
 
-
-
-contract SaleDatastore {
+contract LPTokenNFTWrapper {
     
-    
-
 }
