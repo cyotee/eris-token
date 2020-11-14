@@ -79,6 +79,30 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
                     );
     }
 
+    // TODO needs sale scheduling function. Should use DateTime contract to accept human readable input and convert ot Unix datetime.
+
+    // TODO needs sale start time query function. Should return raw Unix datetime.
+
+    // TODO needs sale start time query function. Should return human readable date.
+
+    // TODO needs function update schedule for a sale.
+    // Intended to facilitate a second sale, or to reschedule a yet to begin sale.
+    // Must confirm that sale is not active.
+
+    // TODO needs function to accept payments for a sale.
+    // Must confirm that sale is active. After sale start datetime and before sale end datetime.
+
+    // TODO needs function to finalize sale.
+    // Must deposit sale and proceed tokens in exchange.
+    // Must archive sales data and token listing.
+    // Should be internal for reuse.
+
+    // TODO needs public function wrapping private function to finalize sale.
+    
+    // TODO needs function to collect sale tokens from sale.
+    // Must confirm that sale is ended by checking datetime.
+    // Should execute the finalize sale function if not already finalized.
+
 /* -------------------------------------------------------------------------- */
 /*              Functions for reuse in platform reimplementation              */
 /* -------------------------------------------------------------------------- */
