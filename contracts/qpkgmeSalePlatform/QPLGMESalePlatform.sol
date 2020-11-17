@@ -8,9 +8,10 @@ import "../dependencies/libraries/utils/time/interfaces/IDateTime.sol";
 import "../dependencies/libraries/datatypes.primitives/Address.sol";
 
 /**
-Contract to execute the sale of a mintable token using a quadratic pricing model.
+ * Contract to execute the sale of a mintable token using a quadratic pricing model.
  */
-contract QPLGMESalePlatform is RoleBasedAccessControl {
+// Need to be AccessControlPlatfomrClient
+contract QPLGMESalePlatform {
 
     using Address for address;
     using SafeERC20 for IERC20;
@@ -31,17 +32,22 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
 
     // constructor() {}
 
+    // TODO need initialization function to register and confgiure roles with AuthorizationPlatform.
+
     // TODO: needs authorization integration to limit access to platform admin
     // TODO needs exchange listing tester to enable public registering of exchanges. This should confirm compatibility by minting 2 test tokens, listing, and attempting to trade. Can be implemented as an adaptor for later development
+    // TODO confirm ic this can be reused for Balancer.
     function registerExchange( address uniswapV2CompatibleRouterddress_, address exchangeFactoryAddress_ ) public {
+        require( uniswapV2CompatibleRouterddress_.isContract() && exchangeFactoryAddress_.isContract() );
         _uniswapV2CompatibleExchangeRouterToFactoryMapping[exhchangeRouterAddress_] = exchangeFactoryAddress_;
     }
 
     /**
      * Intended to provide a small UUID style identifier generated from the minimum amount of date needed to uniquely identify a sale.
-     * Because UniswapV2 compatible exchanges use a router contract as the primary
+     * Because UniswapV2 compatible exchanges use a router contract as the primary integration point the router address is used as the exchange identifier.
      */
      // TODO Needs an event.
+     // Investigate Balancer architecture to confirm if this can be reused for Balancer or if Balancer will need it's own saleID generation function.
     function encodeSaleID(address saleToken_, address proceedsToken_, address uniswapV2CompatibleRouterddress_) public pure returns ( bytes32 ) {
         return _encodeSaleID(saleToken_, proceedsToken_, uniswapV2CompatibleRouterddress_);
     }
@@ -92,52 +98,52 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
                     );
     }
 
-    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    // TODO needs integration to authorization to confirm msg.sender is authorized to configure sale.
     function scheduleSaleStart(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_, uint8 second_) public returns (bool) {
         _saleDataMapping[saleID_].saleStartTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_, uint8 second_);
     }
     
-    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    // TODO needs integration to authorization to confirm msg.sender is authorized to configure sale.
     function scheduleSaleStart(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_) public returns (bool) {
         _saleDataMapping[saleID_].saleStartTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_);
     }
 
-    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    // TODO needs integration to authorization to confirm msg.sender is authorized to configure sale.
     function scheduleSaleStart(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_) public returns (bool) {
         _saleDataMapping[saleID_].saleStartTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_);
     }
 
-    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    // TODO needs integration to authorization to confirm msg.sender is authorized to configure sale.
     function scheduleSaleStart(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_) public returns (bool) {
         _saleDataMapping[saleID_].saleStartTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_;
     }
 
-    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    // TODO needs integration to authorization to confirm msg.sender is authorized to configure sale.
     function scheduleSaleStart(bytes32 saleID_, uint256 saleStartDateTime_) public returns (bool) {
         _saleDataMapping[saleID_].saleStartTimeStamp = saleStartDateTime_;
     }
 
-    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    // TODO needs integration to authorization to confirm msg.sender is authorized to configure sale.
     function scheduleSaleEnd(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_, uint8 second_) public returns (bool) {
         _saleDataMapping[saleID_].saleEndTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_, uint8 second_);
     }
 
-    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    // TODO needs integration to authorization to confirm msg.sender is authorized to configure sale.
     function scheduleSaleEnd(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_) public returns (bool) {
         _saleDataMapping[saleID_].saleEndTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_, uint8 minute_);
     }
 
-    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    // TODO needs integration to authorization to confirm msg.sender is authorized to configure sale.
     function scheduleSaleEnd(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_, uint8 hour_) public returns (bool) {
         _saleDataMapping[saleID_].saleStartTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_, uint8 hour_);
     }
 
-    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    // TODO needs integration to authorization to confirm msg.sender is authorized to configure sale.
     function scheduleSaleEnd(bytes32 saleID_, uint16 year_, uint8 month_, uint8 day_) public returns (bool) {
         _saleDataMapping[saleID_].saleEndTimeStamp = dateTimeCalculator.toTimestamp(uint16 year_, uint8 month_, uint8 day_);
     }
 
-    // TODO needs integration to authroization to confirm msg.sender is authorized to configure sale.
+    // TODO needs integration to authorization to confirm msg.sender is authorized to configure sale.
     function scheduleSaleEnd(bytes32 saleID_, uint256 saleEndTimeStamp_) public returns (bool) {
         _saleDataMapping[saleID_].saleEndTimeStamp = saleEndTimeStamp_;
     }
@@ -160,8 +166,6 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
     function _finalizeSale(bytes32 saleID) internal {
         require( _saleDataMapping[saleID_].saleActivesaleActive ==  true && block.timestamp > _saleDataMapping[saleID_].saleEndTimeStamp );
     }
-
-    
 
     // TODO needs sale start time query function. Should return human readable date.
 
