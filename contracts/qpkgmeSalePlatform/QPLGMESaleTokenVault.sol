@@ -7,6 +7,7 @@ import "hardhat/console.sol";
  * Intended to hold the balances of tokens sold.
  */
  // TODO needs to be AuthorizationPlatformClient.
+ // TODO needs interface.
 contract QPLGMESaleTokenVault {
 
     using Address for address;

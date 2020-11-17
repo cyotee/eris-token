@@ -10,7 +10,8 @@ import "../dependencies/libraries/datatypes.primitives/Address.sol";
 /**
  * Contract to execute the sale of a mintable token using a quadratic pricing model.
  */
-// Need to be AccessControlPlatfomrClient
+// TODO Need to be AccessControlPlatfomrClient
+// TODO needs interface.
 contract QPLGMESalePlatform {
 
     using Address for address;
