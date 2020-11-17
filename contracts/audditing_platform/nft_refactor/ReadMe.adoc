@@ -1,0 +1,6 @@
+Dependencies required to run this project:
+
+* truffle-assertions
+* @openzepplin/contracts
+
+To install the dependecies run the command: npm install truffle-assertions @openzepplin/contracts

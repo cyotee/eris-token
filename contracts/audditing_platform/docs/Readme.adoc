@@ -1,0 +1,2 @@
+This documentation directory is meant for general documentation so throw anything in here related to the parent repo.
+Any specific information to each repo should be contained within their own repo.

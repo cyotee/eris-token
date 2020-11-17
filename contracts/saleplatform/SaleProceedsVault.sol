@@ -3,6 +3,7 @@ pragma solidity 0.7.4;
 
 import "hardhat/console.sol";
 
-contract SaleProceedsVault {
+contract SaleVault {
     
+    // TODO needs to expose functions to allow sales platfomr to burn tokens.
 }

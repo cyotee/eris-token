@@ -1,0 +1,53 @@
+.audit-status {
+    text-align: center;
+}
+
+.main {
+    text-align: center;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: [row1-start] 1fr [row1-end row2-start] 1fr [row2-end row3-start] 1fr [row3-end row4-start] 1fr [row4-end row5-start] 1fr [row6-end row7-start];
+    grid-template-columns: [col1-start] 1fr [col2-end col2-start] 2fr [col2-end col3-start] 1fr [col3-end];
+}
+
+#header {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#donation-info {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+/* ------------------------------------------------- Input ------------------------------------------------- */
+
+#donate-input {
+    margin-bottom: 10px ;
+}
+
+/* ------------------------------------------------- Buttons & Effects ------------------------------------------------- */
+button {
+    cursor: pointer;
+    box-shadow: 1px 2px 0px 1px #899599;
+	background:linear-gradient(to top,  #393f4d 5%, #d4d4dc 90%);
+	border-radius:20px;
+	border:1px solid black;
+	display:inline-block;
+	cursor:pointer;
+	color: white;
+	font-family:Georgia;
+	font-size:16px;
+	padding:2px 7.5px;
+	margin: 5px;
+	text-align: center;
+}
+
+button:hover {
+    color: white;
+    background: black;
+}
