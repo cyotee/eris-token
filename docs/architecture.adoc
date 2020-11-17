@@ -1,0 +1,214 @@
+= Architecture
+
+== EventBroadcaster Protocol
+
+Acts as a central contract for other contracts in the architecture to emit events.
+The intent behind this portion is to enable easy monitoring of the entire platform.
+Might not be needed.
+Might end up being more trouble to maintain then it's worth.
+
+=== EventBroadcaster
+
+Simply implements functions that other contracts can call eot emit events.
+Uses msg.sender to report which contract emitted the event.
+
+== AuthorizationManager Protocol
+
+Contracts will register themselves and their roles as part of their deployment.
+Acts as a central role-based access control (RBAC) contract for the architecture.
+Enables distinct RBAC configurations per contract.
+Enables contracts being added to the architecture to register their roles.
+Existing contracts do no need to know their roles to execute operations.
+Provides controls over which roles can be assigned to a single address.
+
+Example:
+    Addressed assigned the PLATFORM_ADMIN_ROLE cannot also have the PLATFORM_OVERSIGHT_ROLE nor the MINTER_ROLE.
+
+Enables other contracts to get independent verification of role restrictions.
+
+Example:
+    QPSalePlatform can verify that only itself is assigned the MINTER_ROLE for a token contract.
+
+=== AuthorizationManager
+
+Exposes functions for other contracts to submit authorization challenges to validation.
+Deletes RBAC verification to AuthorizationManagerDatastore.
+Delegates to AuthorizationManagerTimelockController tp verify transaction as been approved and time to lock has expired.
+
+=== AuthorizationManagerDatastore
+
+Stores RBAC configuration per contract.
+
+Exposes functions to query datastore about roles and address assignment.
+Should only be accessible by the AuthorizationManager.
+
+=== AuthorizationManagerTimelockController
+
+Stores transaction approvals and timelocks.
+
+Exposes functions to register a request to execute a transaction.
+Should track transaction requests by contract and address requesting to execute the transaction.
+
+Exposes functions to approve a transaction once approval is requested.
+Should track approvals 
+
+== QPSales Protocol
+
+Provides a secure method to list a new token for a quadratic pricing and bonding curve exchange supply calculated sale.
+
+New tokens will register themselves with the AuthorizationManager.
+New token contracts will need to have a minter role.
+New tokens will need to assign their minter role to the QPSalesPlatform contract.
+
+=== QPSalesManager
+
+Developers registering a new token for QP sale will register their sale.
+
+* Token Address
+* Minter role
+* Token address to accept as proceeds
+* Role token uses to manage sale configuration
+* UniswapV2 compatible factory address
+
+QPSalesManager will verify that it is the only address with the assigned minter role.
+
+QPSalesManager will verify that the token pair is not already listed.
+If already listed, QPSalesManager will record a second sale and simply deposit proceeds and newly minted tokens.
+Will have to determine amount needed to deposit in LP of existing pair, and burn any remainder.
+Might not be feasible or appropriate.
+
+If QPSalesManager finds token has not been listed, will create pair and store address with sales data.
+
+[NOTE]
+Would like a way to verify that the mint function is only usable by the minter roles.
+Not sure how this can be done.
+Might be possible by using the AuthorizationManagerClient as a linked library.
+Will likely have to fallback to manual code verification.
+
+QPSalesManager exposes functions to allow an address with the sales management role to schedule a sale.
+uses the DateTime contract to facilitate configuration using human readable dates.
+
+QPSalesManager exposes functions to allow addresses with the sales management role to activate a scheduled sale.
+
+QPSalesManager exposes functions to update a sale configuration provided the sale has not been activated.
+
+QPSalesManager stores all sale data in the QPSalesManagerDatastore.
+
+[NOTE]
+Would like to archive past sales.
+This could likely be done by creating a archived sales ID using the 2 token addresses, the DEX factory address, and timestamp for sale end.
+
+=== QPSalesStoreFront
+
+Acts as the storefront for buying tokens registered with the QPSalesManager.
+
+Accepts ERC20 tokens or Ethereum as proceeds for a sale.
+
+Transfers proceeds token into vault.
+Does not have the ability and should be blocked from receiving transfers the vault.
+
+=== QpSalesDatastore
+
+Stores the data for sales executed through the QPSalesManager.
+
+Only accessible through the QPSalesManager.
+
+=== QPSalesProceedsVault
+
+Stores proceeds from sales in the QPSalesProceedsVault.
+
+Stores sale token once sale has been completed.
+
+This is intended to protect the tokens taken in as proceeds from a sale.
+
+Should convert all Ethereum transferred to it to WETH to simplify code.
+
+Should only allow transfers of assets to the QPSalesLister and the NFTWrappedAssetRedemptionPlatform contracts.
+
+Might need a Ethereum to WETH converter contract to facilitate tracking converted Ethereum to a sale ID.
+
+=== QPSalesLister
+
+Deposits tokens from QPSalesProceedsVault in DEX pair.
+
+Receives LP tokens from deposit in DEX. Transfer LP tokens to QPSalesLPVault.
+
+=== QPSalesLPVault
+
+Stores LP tokens minted as part of deposit in DEX pair.
+
+Exposes functions so NFTWrapper Protocol can withdraw LP tokens to wrap in NFTs.
+
+== NFTWrapper Protocol
+
+Wraps assets in NFTs for a specific address.
+This is a later stage functionality.
+Should be considered in and implementation of the rest of the architecture.
+
+This might require a re-engineering of ERC20, ERC721, and ERC1155 into ERC1876.
+
+=== NFTWrappedAssetVault
+
+Stores NFT wrapped assets.
+
+Tracks by address and NFT nonce to wrapped assets.
+Should be able to track multiple NFTs per address so NFTs can be traded with contained assets.
+
+=== NFTWrappedAssetSalesPlatform
+
+Sells NFT wrapped assets.
+If needed buys LP tokens from the QPSalesLPVault with sale token paid to buy the NFT wrapped LP.
+Should also be able to accept deposits of other tokens to add to the holder's NFT.
+
+=== NFTWrappedAssetRedemptionPlatform
+
+Allows NFT holders to sell back wrapped assets to collect profits.
+
+Selling back assets is a multi-step process:
+
+* Withdraws LP for asset to be sold back.
+* Sells back ERIS to market to buy paired asset.
+* Transfers the purchased paired token to the NFT holder.
+* Splits the remaining paired tokens earlier withdrawn from LP in half.
+* Uses one half to buy more ERIS off the market.
+* Redeposits into LP.
+* Transfers new LP tokens to NFTWrappedAssetVault to be available for sale.
+
+This process provides immediate value that be traded in wrapped form.
+Also keeps liquidity locked until it has matured.
+Maturation is based on price, and built into the redemption process.
+Buy withdrawing, selling, then buying back this enforces a profitability curve on realizing profits that serves to protect the asset price.
+
+Should allow for a modification of this process to buy other wrapped LP tokens.
+
+* Withdraw selling asset from LP
+* Use that to buy ERIS from the pair it just withdrew from
+* As above, split the ERIS withdrawn from LP, use half ot buy more of the paired asset from the market, and deposit the newly bought tokens and the other half of the withdrawn ERIS in LP
+* Credits LP tokens from new deposit to holder's NFT
+* Use the newly purchased ERIS to purchase LP tokens of other token by following the same process as a new buyer
+
+== WrappedAssetInvestment Protocol
+
+Integration for addresses with the PLATFORM_TRADER_ROLE to deposit wrapped assets in other revenue generating protocols.
+
+Intention is for a investment proposal to be made.
+Proposal will consist of a target protocol specifying specific functions and revenue generation scheme provided by the target protocol.
+A proposal targeting currently wrapped assets, proposal will be executed following this process.
+
+* A bonding curve quantity of wrapped assets held by the platform not yet sold to NFT holders will be withdrawn from LP and deposited in target protocol
+* Wrapped assets staked by holders to join proposal will be withdrawn to be deposited in target protocol
+* Stakers can choose if ERIS withdrawn from LP will be held in reserve to act as cover for revenue generation scheme. As a low risk option. Or if ERIS will be burned as a high risk option.
+* There are 2 options when collecting proceeds from proposal.
+** If ERIS from withdrawal was held, then proceeds from proposal will be used split and half used to buy ERIS off the market then deposited in LP. Held ERIS will be used to buy LP tokens of ERIS paired with the proceeds asset. If there is left over ERIS, the remainder will be burned. If there are more LP tokens from proceeds then there is held ERIS to buy, the remaining LP tokens will be kept by the platform.
+** If ERIS was burned, then proceeds tokens are split in half, with half used to buy ERIS off the market. Then deposited into LP. Holder receives all LP token from deposit.
+
+=== IWrappedInvestmentAdaptor
+
+Defines a standardized interface to accept tokens from above process and deposit them into the target protocol.
+
+Implementations of adaptors will expose this interface to WrappedAssetInvestment protocol platform.
+
+=== Pending contract design
+
+Will need a datastore hold newly registered adaptors.
+Will need integration with authorization and event broadcaster platforms.

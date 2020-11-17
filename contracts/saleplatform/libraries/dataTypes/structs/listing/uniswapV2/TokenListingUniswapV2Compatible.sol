@@ -40,9 +40,12 @@ library TokenListingUniswapV2Compatible {
     // Not sure all these properties are needed.
     // Just added what seemed like a good idea now.
     struct SaleData {
+        bytes32 saleAdminRole;
+        bytes32 saleApprovalRole;
         bool saleActive;
         address listerAddress;
         address tokenForSale;
+        uint256 saleTokenQPMultiplier;
         // Use WETH address for sales receiving Ethereum.
         address proceedsToken;
         // Intended to sotre how long a sale will last.
@@ -55,10 +58,10 @@ library TokenListingUniswapV2Compatible {
         // Could be used to schedule when a sale will end.
         uint256 saleEndTimeStamp;
         // Can also store the EThereum paid during a sale.
-        uint256 dec18AmountOfTokenPaid;
+        uint256 dec18TotalAmountOfTokenPaid;
         // Quadratic pricing model relies on tracking the amount paid over a sale.
         // Must track the amout paid for use when calculating the tokens to mint for collection at the end of the sale.
-        mapping( address => unit256 ) amountOfTokenPaidByAddress;
+        mapping( address => unit256 ) dec18AmountOfTokenPaidByAddress;
         TokenListing tokenListing;
     }
 

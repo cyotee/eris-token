@@ -1,0 +1,6 @@
+The steps to migrate to a newer data store are as follows:
+
+Deploy the new data store (lets call that version X)
+Look at datastore version X-1 and if it exists then set previousDataStore in version X to version X-1
+Transfer ownership of version X to the current platform
+Transfer ownership of version X-1 (from the platform) to the void

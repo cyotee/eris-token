@@ -1,0 +1,125 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>730</x><y>457</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;EvenBroadcaster&gt;&gt;
+Protocol::EvenBroadcasterPlatform
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Emit events for integrated protocols</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>400</x><y>277</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;AuthroizationManager&gt;&gt;
+Protocl: AuthroizationManager
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Evaluate authorizations for integrated protocols
+-- Store transaction authroizations
+-- Relay authroization and transaction events</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>407</y><w>150</w><h>160</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>130;140;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1070</x><y>287</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;QPSalesManager&gt;&gt;
+Protocol::QPSaleProtocol
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Manage QP based token sales</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1070</x><y>37</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;QPSaleProceedsVault&gt;&gt;
+Protocol::QPSaleProtocol
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1160</x><y>217</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>347</y><w>490</w><h>40</h></coordinates><panel_attributes>Validates sales registration
+lt=&lt;&lt;.</panel_attributes><additional_attributes>10;20;470;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>40</x><y>280</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;AuthorizationDatastore&gt;&gt;
+Protocl: AuthroizationManager
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>350</y><w>180</w><h>80</h></coordinates><panel_attributes>Confirms
+sudmitted
+authorization
+challenges
+lt=&lt;&lt;.</panel_attributes><additional_attributes>10;20;160;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>730</x><y>880</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;ErisToken&gt;&gt;
+Protocl::Eris
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>820</x><y>470</y><w>370</w><h>430</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>350;10;10;410</additional_attributes></element><element><id>Relation</id><coordinates><x>500</x><y>460</y><w>350</w><h>440</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;330;420</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1060</x><y>880</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;ErisVault&gt;&gt;
+Protocl::Eris
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1150</x><y>470</y><w>40</w><h>430</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;410;20;10</additional_attributes></element><element><id>Relation</id><coordinates><x>930</x><y>960</y><w>150</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>930</x><y>450</y><w>160</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;110;140;10</additional_attributes></element><element><id>Relation</id><coordinates><x>820</x><y>640</y><w>30</w><h>260</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;240</additional_attributes></element><element><id>UMLClass</id><coordinates><x>740</x><y>30</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;QPSalesUniswapV2Lister&gt;&gt;
+Protocol::QPSaleProtocol
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>210</y><w>260</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;240;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>400</x><y>30</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;UniswapV2Factory&gt;&gt;
+Package::UniswapV2
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>600</x><y>120</y><w>160</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;140;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1380</x><y>280</y><w>210</w><h>190</h></coordinates><panel_attributes>&lt;&lt;QPSalesDatastore&gt;&gt;
+Protocol::QPSaleProtocol
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1270</x><y>360</y><w>130</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>110;10;10;10</additional_attributes></element></diagram>
