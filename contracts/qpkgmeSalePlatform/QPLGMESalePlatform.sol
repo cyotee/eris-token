@@ -19,11 +19,14 @@ contract QPLGMESalePlatform {
     using TokenListingUniswapV2Compatible for TokenListingUniswapV2Compatible.TokenListing;
     using TokenListingUniswapV2Compatible for TokenListingUniswapV2Compatible.SaleData;
 
+    // TODO needs function to update address;
     IDateTime private _dateTimeCalculator;
+    // TODO needs function to update address;
     IWETH private _weth;
+    // TODO needs function to update address;
     ISaleProceedsVault private _saleProceedsVault;
-
-    ISaleProceedsCault private salesProceedsVault;
+    // TODO needs function to update address;
+    ISaleProceedsVault private salesProceedsVault;
 
     // Intended to hold DEX information in a form that can be maintained over time.
     // Coupled with the 

@@ -13,7 +13,9 @@ contract QPLGMESaleTokenVault {
     using Address for address;
     using SafeERC20 for ERC20;
 
-    mapping( bytes32 => ERC20 ) private _soldTokensBySaleID;
+    mapping( bytes32 => address ) private _soldTokensBySaleID;
 
-
+    function burn( bytes32 memory saleID_, uint256 amountToBurn_ ) public {
+        
+    }
 }
