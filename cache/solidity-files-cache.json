@@ -1,138 +1,6 @@
 {
   "_format": "hh-sol-cache-1",
   "files": {
-    "D:\\dev\\github-cyotee\\eris-token\\contracts\\abstract\\Context.sol": {
-      "lastModificationDate": 1605070867203,
-      "sourceName": "contracts/abstract/Context.sol",
-      "solcConfig": {
-        "version": "0.7.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.7.4"
-      ],
-      "artifacts": [
-        "Context"
-      ]
-    },
-    "D:\\dev\\github-cyotee\\eris-token\\contracts\\interfaces\\IERC20.sol": {
-      "lastModificationDate": 1605070877485,
-      "sourceName": "contracts/interfaces/IERC20.sol",
-      "solcConfig": {
-        "version": "0.7.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.7.4"
-      ],
-      "artifacts": [
-        "IERC20"
-      ]
-    },
-    "D:\\dev\\github-cyotee\\eris-token\\contracts\\libraries\\utils\\math\\SafeMath.sol": {
-      "lastModificationDate": 1605070853504,
-      "sourceName": "contracts/libraries/utils/math/SafeMath.sol",
-      "solcConfig": {
-        "version": "0.7.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.7.4"
-      ],
-      "artifacts": [
-        "SafeMath"
-      ]
-    },
-    "D:\\dev\\github-cyotee\\eris-token\\contracts\\libraries\\datatypes\\primitives\\Address.sol": {
-      "lastModificationDate": 1605070881811,
-      "sourceName": "contracts/libraries/datatypes/primitives/Address.sol",
-      "solcConfig": {
-        "version": "0.7.4",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "0.7.4"
-      ],
-      "artifacts": [
-        "Address"
-      ]
-    },
     "D:\\dev\\github-cyotee\\eris-token\\node_modules\\hardhat\\console.sol": {
       "lastModificationDate": 1605068570997,
       "sourceName": "hardhat/console.sol",
@@ -275,9 +143,9 @@
         "TestToken2"
       ]
     },
-    "D:\\dev\\github-cyotee\\eris-token\\contracts\\abstract\\AccessControl.sol": {
-      "lastModificationDate": 1605075494672,
-      "sourceName": "contracts/abstract/AccessControl.sol",
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\abstract\\Divine.sol": {
+      "lastModificationDate": 1605786119608,
+      "sourceName": "contracts/abstract/Divine.sol",
       "solcConfig": {
         "version": "0.7.4",
         "settings": {
@@ -301,20 +169,20 @@
         }
       },
       "imports": [
-        "../libraries/datatypes/collections/EnumerableSet.sol",
-        "../libraries/datatypes/primitives/Address.sol",
-        "./Context.sol"
+        "hardhat/console.sol",
+        "../dependencies/holyzeppelin/contracts/token/ERC20/ERC20.sol",
+        "../dependencies/holyzeppelin/contracts/security/Context.sol"
       ],
       "versionPragmas": [
         "0.7.4"
       ],
       "artifacts": [
-        "AccessControl"
+        "Divine"
       ]
     },
-    "D:\\dev\\github-cyotee\\eris-token\\contracts\\libraries\\datatypes\\collections\\EnumerableSet.sol": {
-      "lastModificationDate": 1605074612743,
-      "sourceName": "contracts/libraries/datatypes/collections/EnumerableSet.sol",
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\node_modules\\hardhat\\console.sol": {
+      "lastModificationDate": 1605705125850,
+      "sourceName": "hardhat/console.sol",
       "solcConfig": {
         "version": "0.7.4",
         "settings": {
@@ -339,14 +207,157 @@
       },
       "imports": [],
       "versionPragmas": [
+        ">=0.4.22 <0.8.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC20\\ERC20.sol": {
+      "lastModificationDate": 1605967071951,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../../security/Context.sol",
+        "./IERC20.sol",
+        "../../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
         "0.7.4"
       ],
       "artifacts": [
-        "EnumerableSet"
+        "ERC20"
       ]
     },
-    "D:\\dev\\github-cyotee\\eris-token\\contracts\\ErisToken.sol": {
-      "lastModificationDate": 1605076769810,
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\security\\Context.sol": {
+      "lastModificationDate": 1605967113418,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/security/Context.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC20\\IERC20.sol": {
+      "lastModificationDate": 1605777984997,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\math\\SafeMath.sol": {
+      "lastModificationDate": 1605709507135,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/math/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\ErisToken.sol": {
+      "lastModificationDate": 1605786119608,
       "sourceName": "contracts/ErisToken.sol",
       "solcConfig": {
         "version": "0.7.4",
@@ -381,9 +392,9 @@
         "ErisToken"
       ]
     },
-    "D:\\dev\\github-cyotee\\eris-token\\contracts\\abstract\\ERC20.sol": {
-      "lastModificationDate": 1605076859734,
-      "sourceName": "contracts/abstract/ERC20.sol",
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\security\\constants\\ERISRoles.sol": {
+      "lastModificationDate": 1605693858052,
+      "sourceName": "contracts/security/constants/ERISRoles.sol",
       "solcConfig": {
         "version": "0.7.4",
         "settings": {
@@ -407,21 +418,18 @@
         }
       },
       "imports": [
-        "./Context.sol",
-        "../interfaces/IERC20.sol",
-        "../libraries/utils/math/SafeMath.sol",
-        "../libraries/datatypes/primitives/Address.sol"
+        "hardhat/console.sol"
       ],
       "versionPragmas": [
         "0.7.4"
       ],
       "artifacts": [
-        "ERC20"
+        "ERISRoles"
       ]
     },
-    "D:\\dev\\github-cyotee\\eris-token\\contracts\\libraries\\datatypes\\primitives\\Bytes32.sol": {
-      "lastModificationDate": 1605079102407,
-      "sourceName": "contracts/libraries/datatypes/primitives/Bytes32.sol",
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\ErisTransferManager.sol": {
+      "lastModificationDate": 1605702333256,
+      "sourceName": "contracts/ErisTransferManager.sol",
       "solcConfig": {
         "version": "0.7.4",
         "settings": {
@@ -445,18 +453,18 @@
         }
       },
       "imports": [
-        "../../utils/math/SafeMath.sol"
+        "hardhat/console.sol"
       ],
       "versionPragmas": [
         "0.7.4"
       ],
       "artifacts": [
-        "Bytes32"
+        "ErisTransferManager"
       ]
     },
-    "D:\\dev\\github-cyotee\\eris-token\\contracts\\libraries\\datatypes\\primitives\\String.sol": {
-      "lastModificationDate": 1605078857471,
-      "sourceName": "contracts/libraries/datatypes/primitives/String.sol",
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\ErisShareDatastore.sol": {
+      "lastModificationDate": 1605702332996,
+      "sourceName": "contracts/ErisShareDatastore.sol",
       "solcConfig": {
         "version": "0.7.4",
         "settings": {
@@ -480,18 +488,752 @@
         }
       },
       "imports": [
-        "../../utils/math/SafeMath.sol"
+        "hardhat/console.sol"
       ],
       "versionPragmas": [
         "0.7.4"
       ],
       "artifacts": [
-        "String"
+        "ErisShareDatastore"
       ]
     },
-    "D:\\dev\\github-cyotee\\eris-token\\contracts\\abstract\\Divine.sol": {
-      "lastModificationDate": 1605079541285,
-      "sourceName": "contracts/abstract/Divine.sol",
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC721\\ERC721Holder.sol": {
+      "lastModificationDate": 1605778104027,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC721/ERC721Holder.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./IERC721Receiver.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC721Holder"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC721\\IERC721Receiver.sol": {
+      "lastModificationDate": 1605778137987,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC721Receiver"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC721ReceiverMock.sol": {
+      "lastModificationDate": 1605796207079,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC721ReceiverMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC721/IERC721Receiver.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC721ReceiverMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC721\\ERC721.sol": {
+      "lastModificationDate": 1605965545861,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../../security/Context.sol",
+        "./IERC721.sol",
+        "./IERC721Metadata.sol",
+        "./IERC721Enumerable.sol",
+        "./IERC721Receiver.sol",
+        "../../introspection/ERC165.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol",
+        "../../utils/EnumerableSet.sol",
+        "../../utils/EnumerableMap.sol",
+        "../../utils/Strings.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC721"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC721\\IERC721.sol": {
+      "lastModificationDate": 1605778118370,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../../introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC721"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC721\\IERC721Metadata.sol": {
+      "lastModificationDate": 1605778132021,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC721/IERC721Metadata.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./IERC721.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC721Metadata"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC721\\IERC721Enumerable.sol": {
+      "lastModificationDate": 1605778125201,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC721/IERC721Enumerable.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./IERC721.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC721Enumerable"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\introspection\\ERC165.sol": {
+      "lastModificationDate": 1605809913180,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\utils\\Address.sol": {
+      "lastModificationDate": 1605778222377,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\utils\\EnumerableSet.sol": {
+      "lastModificationDate": 1605778336225,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/utils/EnumerableSet.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "EnumerableSet"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\utils\\EnumerableMap.sol": {
+      "lastModificationDate": 1605778329951,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/utils/EnumerableMap.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "EnumerableMap"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\utils\\Strings.sol": {
+      "lastModificationDate": 1605809838362,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\introspection\\IERC165.sol": {
+      "lastModificationDate": 1605709475449,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\presets\\ERC721PresetMinterPauserAutoId.sol": {
+      "lastModificationDate": 1605796021282,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/presets/ERC721PresetMinterPauserAutoId.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../access/AccessControl.sol",
+        "../security/Context.sol",
+        "../utils/Counters.sol",
+        "../token/ERC721/ERC721.sol",
+        "../token/ERC721/ERC721Burnable.sol",
+        "../token/ERC721/ERC721Pausable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC721PresetMinterPauserAutoId"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\access\\AccessControl.sol": {
+      "lastModificationDate": 1605786605494,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/access/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/EnumerableSet.sol",
+        "../utils/Address.sol",
+        "../security/Context.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\utils\\Counters.sol": {
+      "lastModificationDate": 1605778235991,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/utils/Counters.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Counters"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC721\\ERC721Burnable.sol": {
+      "lastModificationDate": 1605786941474,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC721/ERC721Burnable.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../../security/Context.sol",
+        "./ERC721.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC721Burnable"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC721\\ERC721Pausable.sol": {
+      "lastModificationDate": 1605778111004,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC721/ERC721Pausable.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./ERC721.sol",
+        "../../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC721Pausable"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\utils\\Pausable.sol": {
+      "lastModificationDate": 1605809880417,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/utils/Pausable.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../security/Context.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Pausable"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\PausableMock.sol": {
+      "lastModificationDate": 1605795714738,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/PausableMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "PausableMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC20\\ERC20Pausable.sol": {
+      "lastModificationDate": 1605777972501,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC20/ERC20Pausable.sol",
       "solcConfig": {
         "version": "0.7.4",
         "settings": {
@@ -517,14 +1259,5411 @@
       "imports": [
         "hardhat/console.sol",
         "./ERC20.sol",
+        "../../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20Pausable"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\presets\\ERC20PresetMinterPauser.sol": {
+      "lastModificationDate": 1605796033549,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/presets/ERC20PresetMinterPauser.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../access/AccessControl.sol",
+        "../security/Context.sol",
+        "../token/ERC20/ERC20.sol",
+        "../token/ERC20/ERC20Burnable.sol",
+        "../token/ERC20/ERC20Pausable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20PresetMinterPauser"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC20\\ERC20Burnable.sol": {
+      "lastModificationDate": 1605792123815,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC20/ERC20Burnable.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../../security/Context.sol",
+        "./ERC20.sol",
+        "../../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20Burnable"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\payment\\PaymentSplitter.sol": {
+      "lastModificationDate": 1605796106143,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/payment/PaymentSplitter.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../security/Context.sol",
+        "../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "PaymentSplitter"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\presets\\ERC1155PresetMinterPauser.sol": {
+      "lastModificationDate": 1605796041881,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/presets/ERC1155PresetMinterPauser.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../access/AccessControl.sol",
+        "../security/Context.sol",
+        "../token/ERC1155/ERC1155.sol",
+        "../token/ERC1155/ERC1155Burnable.sol",
+        "../token/ERC1155/ERC1155Pausable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1155PresetMinterPauser"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC1155\\ERC1155.sol": {
+      "lastModificationDate": 1605965882636,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC1155/ERC1155.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./IERC1155.sol",
+        "./IERC1155MetadataURI.sol",
+        "./IERC1155Receiver.sol",
+        "../../security/Context.sol",
+        "../../introspection/ERC165.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1155"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC1155\\ERC1155Burnable.sol": {
+      "lastModificationDate": 1605786119610,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC1155/ERC1155Burnable.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./ERC1155.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1155Burnable"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC1155\\ERC1155Pausable.sol": {
+      "lastModificationDate": 1605778191602,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC1155/ERC1155Pausable.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./ERC1155.sol",
+        "../../utils/Pausable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1155Pausable"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC1155\\IERC1155.sol": {
+      "lastModificationDate": 1605778202762,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../../introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC1155"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC1155\\IERC1155MetadataURI.sol": {
+      "lastModificationDate": 1605778208371,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC1155/IERC1155MetadataURI.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./IERC1155.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC1155MetadataURI"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC1155\\IERC1155Receiver.sol": {
+      "lastModificationDate": 1605778213767,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../../introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC1155Receiver"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC1155Mock.sol": {
+      "lastModificationDate": 1605965798435,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC1155Mock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC1155/ERC1155.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1155Mock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC1155PausableMock.sol": {
+      "lastModificationDate": 1605965753191,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC1155PausableMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./ERC1155Mock.sol",
+        "../token/ERC1155/ERC1155Pausable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1155PausableMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\proxy\\UpgradeableProxy.sol": {
+      "lastModificationDate": 1605795992895,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/proxy/UpgradeableProxy.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./Proxy.sol",
+        "../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "UpgradeableProxy"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\proxy\\Proxy.sol": {
+      "lastModificationDate": 1605777926951,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/proxy/Proxy.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Proxy"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\proxy\\TransparentUpgradeableProxy.sol": {
+      "lastModificationDate": 1605795981850,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/proxy/TransparentUpgradeableProxy.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./UpgradeableProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "TransparentUpgradeableProxy"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\proxy\\ProxyAdmin.sol": {
+      "lastModificationDate": 1605777933629,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/proxy/ProxyAdmin.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../access/Ownable.sol",
+        "./TransparentUpgradeableProxy.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ProxyAdmin"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\access\\Ownable.sol": {
+      "lastModificationDate": 1605966077870,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/Address.sol",
+        "../security/Context.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\OwnableMock.sol": {
+      "lastModificationDate": 1605777771542,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/OwnableMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "OwnableMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\payment\\escrow\\Escrow.sol": {
+      "lastModificationDate": 1605777867124,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/payment/escrow/Escrow.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../../math/SafeMath.sol",
+        "../../access/Ownable.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Escrow"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\payment\\PullPayment.sol": {
+      "lastModificationDate": 1605795697228,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/payment/PullPayment.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./escrow/Escrow.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "PullPayment"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\PullPaymentMock.sol": {
+      "lastModificationDate": 1605795679849,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/PullPaymentMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../payment/PullPayment.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "PullPaymentMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\payment\\escrow\\ConditionalEscrow.sol": {
+      "lastModificationDate": 1605777860424,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/payment/escrow/ConditionalEscrow.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./Escrow.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ConditionalEscrow"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\payment\\escrow\\RefundEscrow.sol": {
+      "lastModificationDate": 1605796093834,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/payment/escrow/RefundEscrow.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./ConditionalEscrow.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "RefundEscrow"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ConditionalEscrowMock.sol": {
+      "lastModificationDate": 1605777569587,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ConditionalEscrowMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../payment/escrow/ConditionalEscrow.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ConditionalEscrowMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\GSN\\GSNRecipientERC20Fee.sol": {
+      "lastModificationDate": 1605966063715,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/GSN/GSNRecipientERC20Fee.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./GSNRecipient.sol",
+        "../math/SafeMath.sol",
+        "../access/Ownable.sol",
+        "../token/ERC20/SafeERC20.sol",
+        "../token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "GSNRecipientERC20Fee",
+        "__unstable__ERC20Owned"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\GSN\\GSNRecipient.sol": {
+      "lastModificationDate": 1605967138589,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/GSN/GSNRecipient.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./IRelayRecipient.sol",
+        "./IRelayHub.sol",
+        "../security/Context.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "GSNRecipient"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC20\\SafeERC20.sol": {
+      "lastModificationDate": 1605777990951,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC20/SafeERC20.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./IERC20.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "SafeERC20"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\GSN\\IRelayRecipient.sol": {
+      "lastModificationDate": 1605709423080,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/GSN/IRelayRecipient.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IRelayRecipient"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\GSN\\IRelayHub.sol": {
+      "lastModificationDate": 1605709417314,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/GSN/IRelayHub.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IRelayHub"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\GSNRecipientERC20FeeMock.sol": {
+      "lastModificationDate": 1605796129258,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/GSNRecipientERC20FeeMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../GSN/GSNRecipient.sol",
+        "../GSN/GSNRecipientERC20Fee.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "GSNRecipientERC20FeeMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\GSNRecipientSignatureMock.sol": {
+      "lastModificationDate": 1605795733587,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/GSNRecipientSignatureMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../GSN/GSNRecipient.sol",
+        "../GSN/GSNRecipientSignature.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "GSNRecipientSignatureMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\GSN\\GSNRecipientSignature.sol": {
+      "lastModificationDate": 1605966015795,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/GSN/GSNRecipientSignature.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./GSNRecipient.sol",
+        "../cryptography/ECDSA.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "GSNRecipientSignature"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\cryptography\\ECDSA.sol": {
+      "lastModificationDate": 1605709374580,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/cryptography/ECDSA.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ECDSA"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC721GSNRecipientMock.sol": {
+      "lastModificationDate": 1605798712855,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC721GSNRecipientMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC721/ERC721.sol",
+        "../GSN/GSNRecipient.sol",
+        "../GSN/GSNRecipientSignature.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC721GSNRecipientMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ECDSAMock.sol": {
+      "lastModificationDate": 1605777603526,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ECDSAMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../cryptography/ECDSA.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ECDSAMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\GSNRecipientMock.sol": {
+      "lastModificationDate": 1605787964949,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/GSNRecipientMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./ContextMock.sol",
+        "../GSN/GSNRecipient.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "GSNRecipientMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ContextMock.sol": {
+      "lastModificationDate": 1605787667946,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ContextMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../security/Context.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ContextMock",
+        "ContextMockCaller"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC20\\ERC20Snapshot.sol": {
+      "lastModificationDate": 1605777978389,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC20/ERC20Snapshot.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Arrays.sol",
+        "../../utils/Counters.sol",
+        "./ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20Snapshot"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\utils\\Arrays.sol": {
+      "lastModificationDate": 1605778229113,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/utils/Arrays.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../math/Math.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Arrays"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\math\\Math.sol": {
+      "lastModificationDate": 1605709495115,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/math/Math.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\CountersImpl.sol": {
+      "lastModificationDate": 1605777583217,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/CountersImpl.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/Counters.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "CountersImpl"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\MathMock.sol": {
+      "lastModificationDate": 1605777751606,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/MathMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../math/Math.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "MathMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ArraysImpl.sol": {
+      "lastModificationDate": 1605965949512,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ArraysImpl.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/Arrays.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ArraysImpl"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC20SnapshotMock.sol": {
+      "lastModificationDate": 1605965567426,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC20SnapshotMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC20/ERC20Snapshot.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20SnapshotMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC20Mock.sol": {
+      "lastModificationDate": 1605965585646,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC20Mock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20Mock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC20DecimalsMock.sol": {
+      "lastModificationDate": 1605965603511,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC20DecimalsMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC20/ERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20DecimalsMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC20\\ERC20Capped.sol": {
+      "lastModificationDate": 1605792218586,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC20/ERC20Capped.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./ERC20.sol",
+        "../../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20Capped"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC20CappedMock.sol": {
+      "lastModificationDate": 1605965620613,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC20CappedMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC20/ERC20Capped.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20CappedMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\SafeERC20Helper.sol": {
+      "lastModificationDate": 1605795594632,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/SafeERC20Helper.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../security/Context.sol",
+        "../token/ERC20/IERC20.sol",
+        "../token/ERC20/SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20NoReturnMock",
+        "ERC20ReturnFalseMock",
+        "ERC20ReturnTrueMock",
+        "SafeERC20Wrapper"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC20\\TokenTimelock.sol": {
+      "lastModificationDate": 1605795920596,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC20/TokenTimelock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./SafeERC20.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "TokenTimelock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC777\\ERC777.sol": {
+      "lastModificationDate": 1605796174809,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC777/ERC777.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../../security/Context.sol",
+        "./IERC777.sol",
+        "./IERC777Recipient.sol",
+        "./IERC777Sender.sol",
+        "../../token/ERC20/IERC20.sol",
+        "../../math/SafeMath.sol",
+        "../../utils/Address.sol",
+        "../../introspection/IERC1820Registry.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC777"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC777\\IERC777.sol": {
+      "lastModificationDate": 1605778152023,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC777/IERC777.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC777"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC777\\IERC777Recipient.sol": {
+      "lastModificationDate": 1605778158693,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC777/IERC777Recipient.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC777Recipient"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC777\\IERC777Sender.sol": {
+      "lastModificationDate": 1605778164237,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC777/IERC777Sender.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC777Sender"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\introspection\\IERC1820Registry.sol": {
+      "lastModificationDate": 1605786356627,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/introspection/IERC1820Registry.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC1820Registry"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC777SenderRecipientMock.sol": {
+      "lastModificationDate": 1605786715201,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC777SenderRecipientMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../security/Context.sol",
+        "../token/ERC777/IERC777.sol",
+        "../token/ERC777/IERC777Sender.sol",
+        "../token/ERC777/IERC777Recipient.sol",
+        "../introspection/IERC1820Registry.sol",
+        "../introspection/ERC1820Implementer.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC777SenderRecipientMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\introspection\\ERC1820Implementer.sol": {
+      "lastModificationDate": 1605709452303,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/introspection/ERC1820Implementer.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./IERC1820Implementer.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1820Implementer"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\introspection\\IERC1820Implementer.sol": {
+      "lastModificationDate": 1605709481668,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/introspection/IERC1820Implementer.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "IERC1820Implementer"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC1820ImplementerMock.sol": {
+      "lastModificationDate": 1605777725557,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC1820ImplementerMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../introspection/ERC1820Implementer.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1820ImplementerMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\Create2Impl.sol": {
+      "lastModificationDate": 1605777589099,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/Create2Impl.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/Create2.sol",
+        "../introspection/ERC1820Implementer.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Create2Impl"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\utils\\Create2.sol": {
+      "lastModificationDate": 1605778241951,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/utils/Create2.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Create2"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC777Mock.sol": {
+      "lastModificationDate": 1605796146093,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC777Mock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../security/Context.sol",
+        "../token/ERC777/ERC777.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC777Mock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\AddressImpl.sol": {
+      "lastModificationDate": 1605709546496,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/AddressImpl.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/Address.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "AddressImpl"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\AccessControlMock.sol": {
+      "lastModificationDate": 1605965975244,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/AccessControlMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../access/AccessControl.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "AccessControlMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\access\\TimelockController.sol": {
+      "lastModificationDate": 1605965991372,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/access/TimelockController.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./../math/SafeMath.sol",
         "./AccessControl.sol"
       ],
       "versionPragmas": [
         "0.7.4"
       ],
       "artifacts": [
-        "Divine"
+        "TimelockController"
       ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\EnumerableSetMock.sol": {
+      "lastModificationDate": 1605777616471,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/EnumerableSetMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/EnumerableSet.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "EnumerableAddressSetMock",
+        "EnumerableUintSetMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC1155\\ERC1155Receiver.sol": {
+      "lastModificationDate": 1605795944135,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC1155/ERC1155Receiver.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./IERC1155Receiver.sol",
+        "../../introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1155Receiver"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC1155ReceiverMock.sol": {
+      "lastModificationDate": 1605965719632,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC1155ReceiverMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC1155/IERC1155Receiver.sol",
+        "./ERC165Mock.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1155ReceiverMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC165Mock.sol": {
+      "lastModificationDate": 1605777665687,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC165Mock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC165Mock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC165\\ERC165InterfacesSupported.sol": {
+      "lastModificationDate": 1605965849826,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC165/ERC165InterfacesSupported.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../../introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC165InterfacesSupported",
+        "SupportsInterfaceWithLookupMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\token\\ERC1155\\ERC1155Holder.sol": {
+      "lastModificationDate": 1605778184511,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/token/ERC1155/ERC1155Holder.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./ERC1155Receiver.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1155Holder"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC1155BurnableMock.sol": {
+      "lastModificationDate": 1605965860464,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC1155BurnableMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC1155/ERC1155Burnable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC1155BurnableMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ReentrancyAttack.sol": {
+      "lastModificationDate": 1605786730977,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ReentrancyAttack.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../security/Context.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ReentrancyAttack"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ReentrancyMock.sol": {
+      "lastModificationDate": 1605795613330,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ReentrancyMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/ReentrancyGuard.sol",
+        "./ReentrancyAttack.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ReentrancyMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\utils\\ReentrancyGuard.sol": {
+      "lastModificationDate": 1605795641733,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/utils/ReentrancyGuard.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ReentrancyGuard"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC721BurnableMock.sol": {
+      "lastModificationDate": 1605800035044,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC721BurnableMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC721/ERC721Burnable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC721BurnableMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\SafeMathMock.sol": {
+      "lastModificationDate": 1605777834045,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/SafeMathMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "SafeMathMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\StringsMock.sol": {
+      "lastModificationDate": 1605777852518,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/StringsMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/Strings.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "StringsMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC20BurnableMock.sol": {
+      "lastModificationDate": 1605965630211,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC20BurnableMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC20/ERC20Burnable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20BurnableMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC20PausableMock.sol": {
+      "lastModificationDate": 1605965577178,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC20PausableMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC20/ERC20Pausable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC20PausableMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC721PausableMock.sol": {
+      "lastModificationDate": 1605798689005,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC721PausableMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC721/ERC721Pausable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC721PausableMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC721Mock.sol": {
+      "lastModificationDate": 1605798696885,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC721Mock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../token/ERC721/ERC721.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC721Mock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\EnumerableMapMock.sol": {
+      "lastModificationDate": 1605777610003,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/EnumerableMapMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/EnumerableMap.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "EnumerableMapMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\SingleInheritanceInitializableMocks.sol": {
+      "lastModificationDate": 1605777846606,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/SingleInheritanceInitializableMocks.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../proxy/Initializable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "MigratableMockV1",
+        "MigratableMockV2",
+        "MigratableMockV3"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\proxy\\Initializable.sol": {
+      "lastModificationDate": 1605777919267,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/proxy/Initializable.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Initializable"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\RegressionImplementation.sol": {
+      "lastModificationDate": 1605777817248,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/RegressionImplementation.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../proxy/Initializable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Implementation1",
+        "Implementation2",
+        "Implementation3",
+        "Implementation4"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\MultipleInheritanceInitializableMocks.sol": {
+      "lastModificationDate": 1605777766439,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/MultipleInheritanceInitializableMocks.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../proxy/Initializable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "SampleChild",
+        "SampleFather",
+        "SampleGramps",
+        "SampleHuman",
+        "SampleMother"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\InitializableMock.sol": {
+      "lastModificationDate": 1605777747521,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/InitializableMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../proxy/Initializable.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "InitializableMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\SignedSafeMathMock.sol": {
+      "lastModificationDate": 1605777840097,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/SignedSafeMathMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../math/SignedSafeMath.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "SignedSafeMathMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\math\\SignedSafeMath.sol": {
+      "lastModificationDate": 1605709513664,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/math/SignedSafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "SignedSafeMath"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\utils\\SafeCast.sol": {
+      "lastModificationDate": 1605778358150,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/utils/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\SafeCastMock.sol": {
+      "lastModificationDate": 1605777822853,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/SafeCastMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../utils/SafeCast.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "SafeCastMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\MerkleProofWrapper.sol": {
+      "lastModificationDate": 1605777757543,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/MerkleProofWrapper.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../cryptography/MerkleProof.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "MerkleProofWrapper"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\cryptography\\MerkleProof.sol": {
+      "lastModificationDate": 1605709380450,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/cryptography/MerkleProof.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "MerkleProof"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\EtherReceiverMock.sol": {
+      "lastModificationDate": 1605777728891,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/EtherReceiverMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "EtherReceiverMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC165CheckerMock.sol": {
+      "lastModificationDate": 1605777659288,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC165CheckerMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "../introspection/ERC165Checker.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC165CheckerMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\introspection\\ERC165Checker.sol": {
+      "lastModificationDate": 1605709438012,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/introspection/ERC165Checker.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC165Checker"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ERC165\\ERC165NotSupported.sol": {
+      "lastModificationDate": 1605709533840,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ERC165/ERC165NotSupported.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ERC165NotSupported"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\DummyImplementation.sol": {
+      "lastModificationDate": 1605777596585,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/DummyImplementation.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "DummyImplementation",
+        "DummyImplementationV2",
+        "Impl"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\ClashingImplementation.sol": {
+      "lastModificationDate": 1605709565233,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ClashingImplementation.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "ClashingImplementation"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\mocks\\CallReceiverMock.sol": {
+      "lastModificationDate": 1605709558567,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/CallReceiverMock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "CallReceiverMock"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\abstract\\AccessControl.sol": {
+      "lastModificationDate": 1605786119609,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/abstract/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\abstract\\AuthorizationPlatformClient.sol": {
+      "lastModificationDate": 1605708195966,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/abstract/AuthorizationPlatformClient.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\abstract\\erc\\ERC20\\ERC20.sol": {
+      "lastModificationDate": 1605786119609,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/abstract/erc/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\abstract\\erc\\ERC20\\SecureERC20.sol": {
+      "lastModificationDate": 1605786119610,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/abstract/erc/ERC20/SecureERC20.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\abstract\\RoleBasedAccessControl.sol": {
+      "lastModificationDate": 1605786119609,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/abstract/RoleBasedAccessControl.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\abstract\\Timelock.sol": {
+      "lastModificationDate": 1605708214143,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/abstract/Timelock.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\abstract\\TimelockController.sol": {
+      "lastModificationDate": 1605786119609,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/abstract/TimelockController.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\interfaces\\erc\\erc20\\IERC20.sol": {
+      "lastModificationDate": 1605708230509,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/interfaces/erc/erc20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\interfaces\\uniswapV2\\IUniswapV2Callee.sol": {
+      "lastModificationDate": 1605708236043,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/interfaces/uniswapV2/IUniswapV2Callee.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\interfaces\\uniswapV2\\IUniswapV2ERC20.sol": {
+      "lastModificationDate": 1605708240827,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/interfaces/uniswapV2/IUniswapV2ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\interfaces\\uniswapV2\\IUniswapV2Factory.sol": {
+      "lastModificationDate": 1605708245154,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/interfaces/uniswapV2/IUniswapV2Factory.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\interfaces\\uniswapV2\\IUniswapV2Pair.sol": {
+      "lastModificationDate": 1605708248937,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/interfaces/uniswapV2/IUniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\interfaces\\uniswapV2\\IUniswapV2Router01.sol": {
+      "lastModificationDate": 1605708253888,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/interfaces/uniswapV2/IUniswapV2Router01.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\interfaces\\uniswapV2\\IUniswapV2Router02.sol": {
+      "lastModificationDate": 1605708257925,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/interfaces/uniswapV2/IUniswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\interfaces\\uniswapV2\\IWETH.sol": {
+      "lastModificationDate": 1605708261862,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/interfaces/uniswapV2/IWETH.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\datatypes\\collections\\AddressSet.sol": {
+      "lastModificationDate": 1605708287756,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/datatypes/collections/AddressSet.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\datatypes\\collections\\Bytes32Set.sol": {
+      "lastModificationDate": 1605708291810,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/datatypes/collections/Bytes32Set.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\datatypes\\collections\\EnumerableSet.sol": {
+      "lastModificationDate": 1605708296620,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/datatypes/collections/EnumerableSet.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\datatypes\\collections\\UInt256Set.sol": {
+      "lastModificationDate": 1605708300623,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/datatypes/collections/UInt256Set.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\datatypes\\primitives\\Address.sol": {
+      "lastModificationDate": 1605708305710,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/datatypes/primitives/Address.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\datatypes\\primitives\\Bytes32.sol": {
+      "lastModificationDate": 1605708310038,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/datatypes/primitives/Bytes32.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\datatypes\\primitives\\SafeCast.sol": {
+      "lastModificationDate": 1605807525048,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/datatypes/primitives/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\datatypes\\primitives\\SignedSafeMath.sol": {
+      "lastModificationDate": 1605708317978,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/datatypes/primitives/SignedSafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\datatypes\\primitives\\String.sol": {
+      "lastModificationDate": 1605708322756,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/datatypes/primitives/String.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\datatypes\\primitives\\Uint256.sol": {
+      "lastModificationDate": 1605708326845,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/datatypes/primitives/Uint256.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\erc\\ERC20\\events\\ERC20BurnableEvents.sol": {
+      "lastModificationDate": 1605708332629,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/erc/ERC20/events/ERC20BurnableEvents.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\erc\\ERC20\\events\\ERC20SelfListingUniswapEvents.sol": {
+      "lastModificationDate": 1605708336758,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/erc/ERC20/events/ERC20SelfListingUniswapEvents.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\modifiers\\RoleBasedAccessControlModifiers.sol": {
+      "lastModificationDate": 1605786119609,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/modifiers/RoleBasedAccessControlModifiers.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\security\\constants\\Roles.sol": {
+      "lastModificationDate": 1605708349523,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/security/constants/Roles.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\security\\events\\AuthorizationDatastoreEvents.sol": {
+      "lastModificationDate": 1605708355092,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/security/events/AuthorizationDatastoreEvents.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\security\\events\\RoleBasedAccessControlEvents.sol": {
+      "lastModificationDate": 1605708358676,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/security/events/RoleBasedAccessControlEvents.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\security\\structs\\RoleData.sol": {
+      "lastModificationDate": 1605708363398,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/security/structs/RoleData.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\security\\utils\\Context.sol": {
+      "lastModificationDate": 1605786119609,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/security/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\utils\\math\\FinancialSafeMath.sol": {
+      "lastModificationDate": 1605708385060,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/utils/math/FinancialSafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\utils\\time\\interfaces\\IDateTime.sol": {
+      "lastModificationDate": 1605708424107,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/utils/time/interfaces/IDateTime.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\dependencies\\holyzeppelin\\contracts\\wip\\libraries\\utils\\time\\SafeDateTime.sol": {
+      "lastModificationDate": 1605708428364,
+      "sourceName": "contracts/dependencies/holyzeppelin/contracts/wip/libraries/utils/time/SafeDateTime.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\ERIS.efi.sol": {
+      "lastModificationDate": 1605967491035,
+      "sourceName": "contracts/ERIS.efi.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "0.7.4"
+      ],
+      "artifacts": [
+        "Address",
+        "Context",
+        "Divine",
+        "ERC20",
+        "ERC20Burnable",
+        "Eris",
+        "FinancialSafeMath",
+        "IERC20",
+        "IUniswapV2Factory",
+        "IUniswapV2Pair",
+        "IUniswapV2Router01",
+        "IUniswapV2Router02",
+        "Ownable",
+        "SafeMath"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\contracts\\Migrations.sol": {
+      "lastModificationDate": 1605693858053,
+      "sourceName": "contracts/Migrations.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.8.0"
+      ],
+      "artifacts": [
+        "Migrations"
+      ]
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\datetime\\DateTime.sol": {
+      "lastModificationDate": 1605709201557,
+      "sourceName": "test/contracts/datetime/DateTime.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\TestToken1.sol": {
+      "lastModificationDate": 1605786119608,
+      "sourceName": "test/contracts/TestToken1.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\TestToken2.sol": {
+      "lastModificationDate": 1605786119608,
+      "sourceName": "test/contracts/TestToken2.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\interfaces\\IERC20.sol": {
+      "lastModificationDate": 1605709209697,
+      "sourceName": "test/contracts/uniswapv2/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\interfaces\\IUniswapV2Callee.sol": {
+      "lastModificationDate": 1605709213384,
+      "sourceName": "test/contracts/uniswapv2/interfaces/IUniswapV2Callee.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\interfaces\\IUniswapV2ERC20.sol": {
+      "lastModificationDate": 1605709217544,
+      "sourceName": "test/contracts/uniswapv2/interfaces/IUniswapV2ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\interfaces\\IUniswapV2Factory.sol": {
+      "lastModificationDate": 1605709221591,
+      "sourceName": "test/contracts/uniswapv2/interfaces/IUniswapV2Factory.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\interfaces\\IUniswapV2Pair.sol": {
+      "lastModificationDate": 1605709226576,
+      "sourceName": "test/contracts/uniswapv2/interfaces/IUniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\interfaces\\IUniswapV2Router01.sol": {
+      "lastModificationDate": 1605709230261,
+      "sourceName": "test/contracts/uniswapv2/interfaces/IUniswapV2Router01.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\interfaces\\IUniswapV2Router02.sol": {
+      "lastModificationDate": 1605709234230,
+      "sourceName": "test/contracts/uniswapv2/interfaces/IUniswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\interfaces\\IWETH.sol": {
+      "lastModificationDate": 1605709238224,
+      "sourceName": "test/contracts/uniswapv2/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\libraries\\Math.sol": {
+      "lastModificationDate": 1605709246253,
+      "sourceName": "test/contracts/uniswapv2/libraries/Math.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\libraries\\SafeMath.sol": {
+      "lastModificationDate": 1605709250006,
+      "sourceName": "test/contracts/uniswapv2/libraries/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\libraries\\TransferHelper.sol": {
+      "lastModificationDate": 1605709254914,
+      "sourceName": "test/contracts/uniswapv2/libraries/TransferHelper.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\libraries\\UniswapV2Library.sol": {
+      "lastModificationDate": 1605709258947,
+      "sourceName": "test/contracts/uniswapv2/libraries/UniswapV2Library.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\libraries\\UQ112x112.sol": {
+      "lastModificationDate": 1605709263995,
+      "sourceName": "test/contracts/uniswapv2/libraries/UQ112x112.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\UniswapV2ERC20.sol": {
+      "lastModificationDate": 1605709270962,
+      "sourceName": "test/contracts/uniswapv2/UniswapV2ERC20.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\UniswapV2Factory.sol": {
+      "lastModificationDate": 1605709274976,
+      "sourceName": "test/contracts/uniswapv2/UniswapV2Factory.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\UniswapV2Pair.sol": {
+      "lastModificationDate": 1605709278914,
+      "sourceName": "test/contracts/uniswapv2/UniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
+    },
+    "D:\\dev\\github-cyotee\\chains-ecosystem\\contracts\\eris-token\\test\\contracts\\uniswapv2\\UniswapV2Router02.sol": {
+      "lastModificationDate": 1605709283158,
+      "sourceName": "test/contracts/uniswapv2/UniswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.7.4",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [],
+      "artifacts": []
     }
   }
 }

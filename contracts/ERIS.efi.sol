@@ -213,7 +213,7 @@ abstract contract Ownable is Context {
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 
     constructor () {
-        address msgSender = _msgSender();
+        address msgSender = Context._msgSender();
         _owner = msgSender;
         emit OwnershipTransferred(address(0), msgSender);
     }
@@ -223,7 +223,7 @@ abstract contract Ownable is Context {
     }
 
     modifier onlyOwner() {
-        require(_owner == _msgSender(), "Ownable: caller is not the owner");
+        require(_owner == Context._msgSender(), "Ownable: caller is not the owner");
         _;
     }
 
@@ -467,9 +467,9 @@ contract ERC20 is Context, IERC20 {
     IUniswapV2Pair internal _uniswapV2ErisWETHDEXPair;
     address public uniswapV2ErisWETHDEXPairAddress;
 
-    constructor (string memory name, string memory symbol) public {
-        _name = name;
-        _symbol = symbol;
+    constructor (string memory name_, string memory symbol_ ) public {
+        _name = name_;
+        _symbol = symbol_;
         _decimals = 18;
     }
 
@@ -507,7 +507,7 @@ contract ERC20 is Context, IERC20 {
     }
 
     function transfer(address recipient, uint256 amount) public virtual override returns (bool) {
-        _transfer(_msgSender(), recipient, amount);
+        _transfer(Context._msgSender(), recipient, amount);
         return true;
     }
 
@@ -516,23 +516,23 @@ contract ERC20 is Context, IERC20 {
     }
 
     function approve(address spender, uint256 amount) public virtual override returns (bool) {
-        _approve(_msgSender(), spender, amount);
+        _approve(Context._msgSender(), spender, amount);
         return true;
     }
 
     function transferFrom(address sender, address recipient, uint256 amount) public virtual override returns (bool) {
         _transfer(sender, recipient, amount);
-        _approve(sender, _msgSender(), _allowances[sender][_msgSender()].sub(amount, "ERC20: transfer amount exceeds allowance"));
+        _approve(sender, Context._msgSender(), _allowances[sender][Context._msgSender()].sub(amount, "ERC20: transfer amount exceeds allowance"));
         return true;
     }
 
     function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {
-        _approve(_msgSender(), spender, _allowances[_msgSender()][spender].add(addedValue));
+        _approve(Context._msgSender(), spender, _allowances[Context._msgSender()][spender].add(addedValue));
         return true;
     }
 
     function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {
-        _approve(_msgSender(), spender, _allowances[_msgSender()][spender].sub(subtractedValue, "ERC20: decreased allowance below zero"));
+        _approve(Context._msgSender(), spender, _allowances[Context._msgSender()][spender].sub(subtractedValue, "ERC20: decreased allowance below zero"));
         return true;
     }
 
@@ -598,7 +598,7 @@ contract ERC20 is Context, IERC20 {
                 abi.encodePacked(
                     block.timestamp,
                     _nonce,
-                    _msgSender(),
+                    Context._msgSender(),
                     block.difficulty
                 )
             )
@@ -610,21 +610,21 @@ contract ERC20 is Context, IERC20 {
             keccak256(
                 abi.encodePacked(
                     block.difficulty,
-                    _msgSender(),
+                    Context._msgSender(),
                     _nonce,
-                    _msgSender(),
+                    Context._msgSender(),
                     block.timestamp
                 )
             )
         ) % 100;
     }
 
-    function _getTransferFeeAmount( uint256 amountTransfered ) private view returns ( uint256 ) {
-        return amountTransfered.div(_transferFeePercentage);
+    function _getTransferFeeAmount( uint256 amountTransfered_ ) private view returns ( uint256 ) {
+        return amountTransfered_.div(_transferFeePercentage);
     }
 
-    function _getERSIChaosAmount( uint256 amountTransfered ) private returns ( uint256 ) {
-        return FinancialSafeMath.bondingPrice( 55, _getTransferFeeAmount( amountTransfered ) ).div(1e2);
+    function _getERSIChaosAmount( uint256 amountTransfered_ ) private returns ( uint256 ) {
+        return FinancialSafeMath.bondingPrice( 55, _getTransferFeeAmount( amountTransfered_ ) ).div(1e2);
     }
 
     function _chaos(  uint256 amount ) private {
@@ -658,13 +658,13 @@ abstract contract ERC20Burnable is Context, ERC20 {
     using Address for address;
 
     function burn(uint256 amount) public virtual {
-        _burn(_msgSender(), amount);
+        _burn(Context._msgSender(), amount);
     }
 
     function burnFrom(address account, uint256 amount) public virtual {
-        uint256 decreasedAllowance = allowance(account, _msgSender()).sub(amount, "ERC20: burn amount exceeds allowance");
+        uint256 decreasedAllowance = allowance(account, Context._msgSender()).sub(amount, "ERC20: burn amount exceeds allowance");
 
-        _approve(account, _msgSender(), decreasedAllowance);
+        _approve(account, Context._msgSender(), decreasedAllowance);
         _burn(account, amount);
     }
 }
@@ -709,15 +709,15 @@ abstract contract Divine is ERC20Burnable, Ownable {
         // createPairOnUniswap();
     }
 
-    // function createPairOnUniswap() private {
-    //     /*
-    //     ***************** FOR TESTING ONLY *************************************************************
-    //     */
-    //     uniswapV2ErisWETHDEXPairAddress = address( _uniswapFactoryV2Factory.createPair( address(_testToken), address(this) ) );
-    //     // _weth = IWETH(address(_uniswapV2Router.WETH()));
-    //     // uniswapV2ErisWETHDEXPairAddress = address( uniswapFactoryV2Factory.createPair( address(_uniswapV2Router.WETH()), address(this) ) );
-    //     _uniswapV2ErisWETHDEXPair = IUniswapV2Pair( uniswapV2ErisWETHDEXPairAddress );
-    // }
+    function createPairOnUniswap() private {
+        /*
+        ***************** FOR TESTING ONLY *************************************************************
+        */
+        uniswapV2ErisWETHDEXPairAddress = address( _uniswapFactoryV2Factory.createPair( address(_testToken), address(this) ) );
+        // _weth = IWETH(address(_uniswapV2Router.WETH()));
+        // uniswapV2ErisWETHDEXPairAddress = address( uniswapFactoryV2Factory.createPair( address(_uniswapV2Router.WETH()), address(this) ) );
+        _uniswapV2ErisWETHDEXPair = IUniswapV2Pair( uniswapV2ErisWETHDEXPairAddress );
+    }
 
     function setTestToken( address testToken_ ) public onlyOwner() {
         _testToken = IERC20(testToken_);
@@ -730,50 +730,50 @@ contract Eris is Divine {
     using SafeMath for uint256;
     using Address for address;
 
-    // event QPLGMEStarted( bool oplgmeActive, uint256 startTime );
-    // event QPLGMEEnded( bool oplgmeActive, uint256 startTime );
+    event QPLGMEStarted( bool oplgmeActive, uint256 startTime );
+    event QPLGMEEnded( bool oplgmeActive, uint256 startTime );
 
-    // modifier notHadQPLGME() {
-    //     require( !hadQPLGME );
-    //     _;
-    // }
+    modifier notHadQPLGME() {
+        require( !hadQPLGME );
+        _;
+    }
 
-    // modifier erisQPLGMEActive() {
-    //     require( 
-    //         qplgmeActive 
-    //         // && qplgmeStartTimestamp.add(qplgmeLength) > block.timestamp
-    //         , "Eris::erisQPLGMEActive(): QPLGME inactive" 
-    //     );
-    //     _;
-    // }
+    modifier erisQPLGMEActive() {
+        require( 
+            qplgmeActive 
+            // && qplgmeStartTimestamp.add(qplgmeLength) > block.timestamp
+            , "Eris::erisQPLGMEActive(): QPLGME inactive" 
+        );
+        _;
+    }
 
-    // modifier erisQPLGMEInactive() {
-    //     require( 
-    //         !qplgmeActive 
-    //         // || qplgmeStartTimestamp.add(qplgmeLength) < block.timestamp 
-    //         , "Eris::erisQPLGMEInactive(): QPLGME active" 
-    //     );
-    //     _;
-    // }
+    modifier erisQPLGMEInactive() {
+        require( 
+            !qplgmeActive 
+            // || qplgmeStartTimestamp.add(qplgmeLength) < block.timestamp 
+            , "Eris::erisQPLGMEInactive(): QPLGME active" 
+        );
+        _;
+    }
 
-    // address internal devAddress;
-    // address public charityAddress;
+    address internal devAddress;
+    address public charityAddress;
 
-    // uint256 public qplgmeStartTimestamp;
-    // uint256 public qplgmeEndTimestamp;
-    // bool public qplgmeActive = false;
-    // bool public hadQPLGME = false;
-    // // uint256 public qplgmeLength = 3 days;
-    // uint256 public qplgmeLength = 30 minutes;
-    // uint8 private _erisToEthRatio = 5;
-    // uint8 private _transferFeePercentage = 10;
+    uint256 public qplgmeStartTimestamp;
+    uint256 public qplgmeEndTimestamp;
+    bool public qplgmeActive = false;
+    bool public hadQPLGME = false;
+    // uint256 public qplgmeLength = 3 days;
+    uint256 public qplgmeLength = 30 minutes;
+    uint8 private _erisToEthRatio = 5;
+    uint8 private _transferFeePercentage = 10;
 
-    // uint256 public ethDonationToCharity;
-    // uint256 public totalWeiPaidForEris;
-    // uint256 public _totalLPTokensMinted;
-    // uint256 public _lpPerETHUnit;
+    uint256 public ethDonationToCharity;
+    uint256 public totalWeiPaidForEris;
+    uint256 public _totalLPTokensMinted;
+    uint256 public _lpPerETHUnit;
 
-    // mapping ( address => uint256 ) private _weiPaidForErisByAddress;
+    mapping ( address => uint256 ) private _weiPaidForErisByAddress;
 
     constructor()
         Divine( 
@@ -785,10 +785,10 @@ contract Eris is Divine {
     {
 
         // uint256 totalSupply_ = 30000 * 1e18;
-        // _mint( _msgSender(), totalSupply_ );
+        // _mint( Context._msgSender(), totalSupply_ );
         // totalShares = _totalSupply;
 
-        devAddress = _msgSender();
+        devAddress = Context._msgSender();
         charityAddress = payable( 0x666F20A36BFbbC4bB98ad5D59747d1EbE175E02C );
     }
 
@@ -826,27 +826,27 @@ contract Eris is Divine {
     //     uint256 amountPaidInWEI = msg.value;
     //     _weth.deposit{value: amountPaidInWEI}();
     //     totalWeiPaidForEris = totalWeiPaidForEris.add( amountPaidInWEI );
-    //     if( _weiPaidForErisByAddress[_msgSender()] > 0 ){
-    //         totalSupply = totalSupply.add( _erisForWeiPaid(_weiPaidForErisByAddress[_msgSender()].add(amountPaidInWEI)) ).sub( _erisForWeiPaid(_weiPaidForErisByAddress[_msgSender()] ) );
-    //     } else if( _weiPaidForErisByAddress[_msgSender()] == 0 ) {
-    //         totalSupply = totalSupply.add( _erisForWeiPaid(_weiPaidForErisByAddress[_msgSender()].add( amountPaidInWEI ) ) );
+    //     if( _weiPaidForErisByAddress[Context._msgSender()] > 0 ){
+    //         totalSupply = totalSupply.add( _erisForWeiPaid(_weiPaidForErisByAddress[Context._msgSender()].add(amountPaidInWEI)) ).sub( _erisForWeiPaid(_weiPaidForErisByAddress[Context._msgSender()] ) );
+    //     } else if( _weiPaidForErisByAddress[Context._msgSender()] == 0 ) {
+    //         totalSupply = totalSupply.add( _erisForWeiPaid(_weiPaidForErisByAddress[Context._msgSender()].add( amountPaidInWEI ) ) );
     //     }
-    //     _weiPaidForErisByAddress[_msgSender()] = _weiPaidForErisByAddress[_msgSender()].add( amountPaidInWEI );
+    //     _weiPaidForErisByAddress[Context._msgSender()] = _weiPaidForErisByAddress[Context._msgSender()].add( amountPaidInWEI );
     //     ethDonationToCharity = ethDonationToCharity.add( amountPaidInWEI.div(10) );
     // }
 
     // function buyERIS( uint256 amount) public payable erisQPLGMEActive() {
     //     uint256 amountPaidInWEI = amount;
-    //     _testToken.transferFrom( _msgSender(), address(this), amount);
+    //     _testToken.transferFrom( Context._msgSender(), address(this), amount);
 
-    //     uin256 memory currentBuyersWeirPaidForEris_ = _weiPaidForErisByAddress[_msgSender()];
-    //     _weiPaidForErisByAddress[_msgSender()] = _weiPaidForErisByAddress[_msgSender()].add(amountPaidInWEI);
+    //     uin256 memory currentBuyersWeirPaidForEris_ = _weiPaidForErisByAddress[Context._msgSender()];
+    //     _weiPaidForErisByAddress[Context._msgSender()] = _weiPaidForErisByAddress[Context._msgSender()].add(amountPaidInWEI);
 
-    //     totalWeiPaidForEris = totalWeiPaidForEris.add(_weiPaidForErisByAddress[_msgSender()]).sub( currentBuyersWeirPaidForEris_ );
+    //     totalWeiPaidForEris = totalWeiPaidForEris.add(_weiPaidForErisByAddress[Context._msgSender()]).sub( currentBuyersWeirPaidForEris_ );
 
-    //     _totalSupply = _totalSupply.add( _erisForWeiPaid(_weiPaidForErisByAddress[_msgSender()].add(amountPaidInWEI)) ).sub( _erisForWeiPaid(_weiPaidForErisByAddress[_msgSender()] ) );
+    //     _totalSupply = _totalSupply.add( _erisForWeiPaid(_weiPaidForErisByAddress[Context._msgSender()].add(amountPaidInWEI)) ).sub( _erisForWeiPaid(_weiPaidForErisByAddress[Context._msgSender()] ) );
 
-    //     ethDonationToCharity = ethDonationToCharity.add( _weiPaidForErisByAddress[_msgSender()] / 10 ).sub( currentBuyersWeirPaidForEris_.div(10) );
+    //     ethDonationToCharity = ethDonationToCharity.add( _weiPaidForErisByAddress[Context._msgSender()] / 10 ).sub( currentBuyersWeirPaidForEris_.div(10) );
     // }
 
     // function endQPLGME() public onlyOwner() {
@@ -861,10 +861,10 @@ contract Eris is Divine {
     //         _completeErisGME();
     //     }
 
-    //     if( _weiPaidForErisByAddress[_msgSender()] > 0 ){
-    //         uint256 weiPaidForErisByAddress_ = _weiPaidForErisByAddress[_msgSender()];
-    //         _weiPaidForErisByAddress[_msgSender()] = 0;
-    //         _balances[_msgSender()] =  _erisForWeiPaid( weiPaidForErisByAddress_ );
+    //     if( _weiPaidForErisByAddress[Context._msgSender()] > 0 ){
+    //         uint256 weiPaidForErisByAddress_ = _weiPaidForErisByAddress[Context._msgSender()];
+    //         _weiPaidForErisByAddress[Context._msgSender()] = 0;
+    //         _balances[Context._msgSender()] =  _erisForWeiPaid( weiPaidForErisByAddress_ );
     //     }
     // }
 
@@ -926,13 +926,13 @@ contract Eris is Divine {
     // }
 
     // function withdrawPaidETHForfietAllERIS() public erisQPLGMEActive() {
-    //     uint256 weiPaid = _weiPaidForErisByAddress[_msgSender()];
-    //     _weiPaidForErisByAddress[_msgSender()] = 0 ;
-    //     _balances[_msgSender()] = 0;
+    //     uint256 weiPaid = _weiPaidForErisByAddress[Context._msgSender()];
+    //     _weiPaidForErisByAddress[Context._msgSender()] = 0 ;
+    //     _balances[Context._msgSender()] = 0;
     //     totalWeiPaidForEris = totalWeiPaidForEris.sub( weiPaid );
     //     ethDonationToCharity = ethDonationToCharity.sub( weiPaid.div(10) );
     //     // _weth.withdraw( weiPaid );
-    //     // _msgSender().transfer( weiPaid );
-    //     _testToken.transfer( _msgSender(), weiPaid );
+    //     // Context._msgSender().transfer( weiPaid );
+    //     _testToken.transfer( Context._msgSender(), weiPaid );
     // }
 }

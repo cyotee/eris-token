@@ -11,7 +11,7 @@
 
 //     constructor () ERC20( "TestToken2", "TT2" ) {
 //         console.log("TestToken2::constructor: Instantiating TestToken2");
-//         _mint(_msgSender(), 50000 * 1**decimals()  );
+//         _mint(Context._msgSender(), 50000 * 1**decimals()  );
 //         console.log("TestToken2::constructor: Instantiated TestToken2");
 //     }
 // }

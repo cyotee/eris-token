@@ -1,0 +1,28 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "EtherReceiverMock",
+  "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/EtherReceiverMock.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "acceptEther",
+          "type": "bool"
+        }
+      ],
+      "name": "setAcceptEther",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b5060a38061001e6000396000f3fe608060405260043610601f5760003560e01c80634fea120c146038576033565b3660335760005460ff16603157600080fd5b005b600080fd5b348015604357600080fd5b50603160048036036020811015605857600080fd5b506000805460ff19169135151591909117905556fea2646970667358221220c72f1f6b5cab19f14affaa36208ed46fbd840aeb2f5e45a98f0496a43cfb20e264736f6c63430007040033",
+  "deployedBytecode": "0x608060405260043610601f5760003560e01c80634fea120c146038576033565b3660335760005460ff16603157600080fd5b005b600080fd5b348015604357600080fd5b50603160048036036020811015605857600080fd5b506000805460ff19169135151591909117905556fea2646970667358221220c72f1f6b5cab19f14affaa36208ed46fbd840aeb2f5e45a98f0496a43cfb20e264736f6c63430007040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

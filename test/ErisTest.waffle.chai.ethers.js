@@ -9,8 +9,8 @@ describe(
     function () {
 
         // Roles
-        let DEFAULT_ADMIN_ROLE = ethers.utils.solidityKeccak256( ["string"], ["DEFAULT_ADMIN_ROLE"] );
-        let MINTER_ROLE = ethers.utils.solidityKeccak256( ["string"], ["MINTER_ROLE"] );
+        // let DEFAULT_ADMIN_ROLE = ethers.utils.solidityKeccak256( ["string"], ["DEFAULT_ADMIN_ROLE"] );
+        // let MINTER_ROLE = ethers.utils.solidityKeccak256( ["string"], ["MINTER_ROLE"] );
 
         // let erisToEthRatio = 5;
 

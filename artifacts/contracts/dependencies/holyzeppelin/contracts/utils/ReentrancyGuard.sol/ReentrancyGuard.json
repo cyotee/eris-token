@@ -1,0 +1,16 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ReentrancyGuard",
+  "sourceName": "contracts/dependencies/holyzeppelin/contracts/utils/ReentrancyGuard.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b506001600055603f8060226000396000f3fe6080604052600080fdfea2646970667358221220daf64a1ed7db83f95b989185ac97395dccf33ef21e16a57829d18667dae5f68764736f6c63430007040033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220daf64a1ed7db83f95b989185ac97395dccf33ef21e16a57829d18667dae5f68764736f6c63430007040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,37 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ClashingImplementation",
+  "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/ClashingImplementation.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "delegatedFunction",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060b68061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c8063abf8e0e7146037578063f851a440146051575b600080fd5b603d6073565b604080519115158252519081900360200190f35b60576078565b604080516001600160a01b039092168252519081900360200190f35b600190565b63111111429056fea26469706673582212202529b669ed3ee18cbc4d28e5b474119a7545f06553c1e625e81dd8f106bb811d64736f6c63430007040033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c8063abf8e0e7146037578063f851a440146051575b600080fd5b603d6073565b604080519115158252519081900360200190f35b60576078565b604080516001600160a01b039092168252519081900360200190f35b600190565b63111111429056fea26469706673582212202529b669ed3ee18cbc4d28e5b474119a7545f06553c1e625e81dd8f106bb811d64736f6c63430007040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
