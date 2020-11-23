@@ -2,7 +2,22 @@ const { utils } = require("ethers").utils;
 const { expect } = require("chai");
 const { ethers, waffle, solidity } = require("hardhat");
 const { expectRevert, time, BN } = require('@openzeppelin/test-helpers');
-const { deployContract } = waffle;
+const { deployContract, loadFixture } = waffle;
+
+// describe(
+//     "Fixtures",
+//     () => {
+//         async function deployment(
+//             [deployer, buyer1],
+//             provider
+//         ) {
+//             ErisContract = await ethers.getContractFactory("ErisToken");
+//             eris = await ErisContract.connect( deployer ).deploy();
+
+//             return 
+//         }
+//     }
+// );
 
 describe(
     "Eris contract waffle/chai/ethers test",
@@ -81,17 +96,17 @@ describe(
                 it( 
                     "DeploymentSuccess", 
                     async function() {
-                        expect( await eris.hasRole( eris.DEFAULT_ADMIN_ROLE(), deployer.address ) ).to.equal( true );
-                        console.log("Deployment::DeploymentSuccess: token name.");
+                        // expect( await eris.hasRole( eris.DEFAULT_ADMIN_ROLE(), deployer.address ) ).to.equal( true );
+                        console.log("Test::Deployment::DeploymentSuccess: token name.");
                         expect( await eris.name() ).to.equal("ERIS");
-                        console.log("Deployment::DeploymentSuccess: token symbol.");
+                        console.log("Test::Deployment::DeploymentSuccess: token symbol.");
                         expect( await eris.symbol() ).to.equal("ERIS");
-                        console.log("Deployment::DeploymentSuccess: token decimals.");
+                        console.log("Test::Deployment::DeploymentSuccess: token decimals.");
                         expect( await eris.decimals() ).to.equal(18);
                         //console.log("Deployment::DeploymentSuccess: token burnAddress.");
                         // expect( await eris.burnAddress() ).to.equal(burnAddress);
-                        console.log("Deployment::DeploymentSuccess: token totalSupply.");
-                        expect( await eris.totalSupply() ).to.equal(0);
+                        console.log("Test::Deployment::DeploymentSuccess: token totalSupply equals %s.", ethers.utils.parseUnits( String( 50000 ), "ether" ) );
+                        expect( await eris.totalSupply() ).to.equal( ethers.utils.parseUnits( String( 50000 ), "ether" ) );
                         //console.log("Deployment::DeploymentSuccess: owner.");
                         // expect( await eris.owner() ).to.equal(owner.address);
                         //console.log("Deployment::DeploymentSuccess: devAddress.");
@@ -100,11 +115,154 @@ describe(
                         // expect( await eris.charityAddress() ).to.equal(charity.address);
                         //console.log("Deployment::DeploymentSuccess: qplgmeActive.");
                         // expect( await eris.qplgmeActive() ).to.equal(false);
-                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( 0 ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
                         expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
                         // expect( await eris.connect(owner).balanceOf(charity.address) ).to.equal( String( 0 ) );
                         // expect( await eris.connect(owner).balanceOf( eris.uniswapV2ErisWETHDEXPairAddress() ) ).to.equal( String( 0 ) );
                         // expect( await eris.connect(owner).balanceOf( eris.address ) ).to.equal( String( 0 ) );
+                    }
+                );
+            }
+        );
+
+        describe(
+            "ERC20Compliance",
+            function () {
+                it( 
+                    "transfer", 
+                    async function() {
+                        console.log("Test::ERC20Compliance::transfer: Testing ERC20 transfer implementation functionality");
+                        expect( await eris.totalSupply() ).to.equal( ethers.utils.parseUnits( String( 50000 ), "ether" ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                        expect( await eris.connect(deployer).transfer(buyer1.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 40000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( ethers.utils.parseUnits( String( 9000 ), "ether" ) ) );
+                    }
+                );
+
+                it( 
+                    "approve", 
+                    async function() {
+                        console.log("Test::ERC20Compliance::approve: Testing ERC20 transferFrom implementation functionality");
+                        expect( await eris.totalSupply() ).to.equal( ethers.utils.parseUnits( String( 50000 ), "ether" ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                        expect( await eris.connect(buyer1).approve(deployer.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).allowance(buyer1.address, deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                    }
+                );
+
+                it( 
+                    "increaseAllowance", 
+                    async function() {
+                        console.log("Test::ERC20Compliance::increaseAllowance: Testing ERC20 transferFrom implementation functionality");
+                        expect( await eris.totalSupply() ).to.equal( ethers.utils.parseUnits( String( 50000 ), "ether" ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                        expect( await eris.connect(buyer1).increaseAllowance(deployer.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).allowance(buyer1.address, deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                    }
+                );
+
+                it( 
+                    "decreaseAllowance", 
+                    async function() {
+                        console.log("Test::ERC20Compliance::increaseAllowance: Testing ERC20 transferFrom implementation functionality");
+                        expect( await eris.totalSupply() ).to.equal( ethers.utils.parseUnits( String( 50000 ), "ether" ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                        expect( await eris.connect(buyer1).increaseAllowance(deployer.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).allowance(buyer1.address, deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                        expect( await eris.connect(buyer1).decreaseAllowance(deployer.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).allowance(buyer1.address, deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 0 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                    }
+                );
+
+                it( 
+                    "transfer:approve", 
+                    async function() {
+                        console.log("Test::ERC20Compliance::transferFrom:approve: Testing ERC20 transferFrom implementation functionality");
+                        expect( await eris.totalSupply() ).to.equal( ethers.utils.parseUnits( String( 50000 ), "ether" ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                        expect( await eris.connect(deployer).transfer(buyer1.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 40000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( ethers.utils.parseUnits( String( 9000 ), "ether" ) ) );
+                        expect( await eris.connect(buyer1).approve(deployer.address, ethers.utils.parseUnits( String( 9000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).allowance(buyer1.address, deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 9000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).transferFrom(buyer1.address, deployer.address, ethers.utils.parseUnits( String( 9000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 48100 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                    }
+                );
+
+                it( 
+                    "transferFrom:increaseAllowance", 
+                    async function() {
+                        console.log("Test::ERC20Compliance::transferFrom:increaseAllowance: Testing ERC20 transferFrom implementation functionality");
+                        expect( await eris.totalSupply() ).to.equal( ethers.utils.parseUnits( String( 50000 ), "ether" ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                        expect( await eris.connect(deployer).transfer(buyer1.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 40000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( ethers.utils.parseUnits( String( 9000 ), "ether" ) ) );
+                        expect( await eris.connect(buyer1).increaseAllowance(deployer.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).allowance(buyer1.address, deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).transferFrom(buyer1.address, deployer.address, ethers.utils.parseUnits( String( 9000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 48100 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                    }
+                );
+
+                it( 
+                    "burn", 
+                    async function() {
+                        console.log("Test::ERC20Compliance::burn: Testing ERC20 transferFrom implementation functionality");
+                        expect( await eris.totalSupply() ).to.equal( ethers.utils.parseUnits( String( 50000 ), "ether" ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                        expect( await eris.connect(deployer).burn(ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 40000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                    }
+                );
+
+                it( 
+                    "burnFrom:approve", 
+                    async function() {
+                        console.log("Test::ERC20Compliance::transferFrom:approve: Testing ERC20 transferFrom implementation functionality");
+                        expect( await eris.totalSupply() ).to.equal( ethers.utils.parseUnits( String( 50000 ), "ether" ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                        expect( await eris.connect(deployer).approve(buyer1.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).allowance(deployer.address, buyer1.address) ).to.equal( String( ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(buyer1).burnFrom(deployer.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 40000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                    }
+                );
+
+                it( 
+                    "burnFrom:increaseAllowance", 
+                    async function() {
+                        console.log("Test::ERC20Compliance::transferFrom:increaseAllowance: Testing ERC20 transferFrom implementation functionality");
+                        expect( await eris.totalSupply() ).to.equal( ethers.utils.parseUnits( String( 50000 ), "ether" ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 50000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
+                        expect( await eris.connect(deployer).increaseAllowance(buyer1.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).allowance(deployer.address, buyer1.address) ).to.equal( String( ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(buyer1).burnFrom(deployer.address, ethers.utils.parseUnits( String( 10000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(deployer.address) ).to.equal( String( ethers.utils.parseUnits( String( 40000 ), "ether" ) ) );
+                        expect( await eris.connect(deployer).balanceOf(buyer1.address) ).to.equal( String( 0 ) );
                     }
                 );
             }

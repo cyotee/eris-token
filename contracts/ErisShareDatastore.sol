@@ -3,6 +3,8 @@ pragma solidity 0.7.4;
 
 import "hardhat/console.sol";
 
-contract ErisShareDatastore{
+import "./interfaces/IErisShareDatastore.sol";
+
+contract ErisShareDatastore is IErisShareDatastore {
     
 }

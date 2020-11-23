@@ -3,6 +3,8 @@ pragma solidity 0.7.4;
 
 import "hardhat/console.sol";
 
-contract ErisTransferManager {
+import "./interfaces/IErisTransferManager.sol";
+
+contract ErisTransferManager is IErisTransferManager {
     
 }

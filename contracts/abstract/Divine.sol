@@ -3,7 +3,7 @@ pragma solidity 0.7.4;
 
 import "hardhat/console.sol";
 
-import "../dependencies/holyzeppelin/contracts/token/ERC20/ERC20.sol";
+import "../dependencies/holyzeppelin/contracts/token/ERC20/ERC20Burnable.sol";
 import "../dependencies/holyzeppelin/contracts/security/Context.sol";
 // import "./AccessControl.sol";
 // import ".,/libraries/utils/math/SafeMath.sol";
@@ -13,7 +13,7 @@ import "../dependencies/holyzeppelin/contracts/security/Context.sol";
 /**
  * Intended to gather other abstract contracts and interfaces for Eris.
  */
-abstract contract Divine is ERC20 {
+abstract contract Divine is ERC20Burnable {
 
     // using Bytes32 for bytes32;
 
@@ -24,7 +24,7 @@ abstract contract Divine is ERC20 {
         // console.log("Divine::constructor: Calling _initializeRoles()");
         // _initializeRoles();
         // console.log("Divine::constructor: Called _initializeRoles()");
-        _mint( Context._msgSender(), 50000 * 1**decimals() );
+        // _mint( Context._msgSender(), 50000 * 1**decimals() );
         console.log("Divine::constructor: Instantiated Divine");
     }
 

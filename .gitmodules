@@ -1,3 +1,6 @@
 [submodule "contracts/dependencies/holyzeppelin"]
 	path = contracts/dependencies/holyzeppelin
 	url = git@github.com:cyotee/holyzeppelin.git
+[submodule "contracts/dependencies/authorization-protocol"]
+	path = contracts/dependencies/authorization-protocol
+	url = git@github.com:cyotee/authorization-protocol.git
