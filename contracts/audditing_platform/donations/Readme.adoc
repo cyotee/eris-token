@@ -1,0 +1,4 @@
+
+
+The Donations.sol and Token.sol go hand in hand so you need to deploy the Token then the Donations platform then link the token to the platform and hand over ownership from the token to the platform. The Donation platform also uses Ownable.sol and Pausable.sol so they are required.
+

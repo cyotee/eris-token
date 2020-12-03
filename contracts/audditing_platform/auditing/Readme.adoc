@@ -1,0 +1,70 @@
+This is the repository containing files regarding the auditable platform.
+
+Components include:
+	- An example contract (ToDo.sol) which is meant to be used for demonstration purposes with the Auditable.sol contract
+	- The Auditable.sol contract which is meant to be applied to all of the contracts that the dev is putting through the audit
+	- The Datastore.sol contract which is meant to be used as a store of audit information that may be switched out
+	- The Platform.sol contract which is the contract-in-the-middle between the Datastore and what the users have control over i.e. their code & Auditable.sol
+
+The following section describes those components in greater detail.
+
+ToDo.sol
+----------
+
+This contract is an example contract and thus everything within it is meaningless. 
+The greater purpose is to have a generic contract which can be audited and in this case a simple ToDo contract has been created to demonstrate how the Auditable contract is meant to be applied and used.
+
+In the real world the example contract is likely to take the form of a new investing (system) contract or perhaps a collectible etc.
+The idea is to create whatever you wish and apply the auditing contract.
+
+Auditable.sol
+----------
+
+# TODO: tidy up this mess
+This contract is directly what the dev will be required to copy and implement within their code and it will be up to the auditor to make sure that they have done so correctly.
+Its purpose is to provide a rigid, but simple structor for the dev to follow.
+
+Platform.sol
+----------
+
+# TODO: tidy up and be more verbose
+The platform contract is meant to be the thing in the middle that allows auditors to communicate with the data store albeit it via a limited fashion.
+It allows the owner of the platform to perform actions such as adding, suspending and reinstating the auditors.
+The platform can be paused to prevent actions from occuring in case there is a fault discovered and likewise it can pause the datastore (and unpause them both).
+
+
+AuditNFT.sol
+----------
+
+# TODO: tidy up and be more verbose
+The purpose of the NFT is to fulfill the role of a receipt for the auditor.
+
+Datastore.sol
+----------
+
+# TODO: tidy up and be more verbose
+The purpose of the store is self evident. We must maintain evidence of contracts that have been audited and who has audited them to allow anyone to view that
+work and make a decision for themselves if they are comfortable with the results.
+
+Pausable.sol
+----------
+
+A contract that allows us to start and stop functionality in case there is a fault discovered
+
+Ownable.sol
+----------
+
+Similar to openzeppelin's implementation but with minor improvements and the owner is payable because we are using this in different projects
+
+
+
+
+
+
+
+
+
+
+
+
+

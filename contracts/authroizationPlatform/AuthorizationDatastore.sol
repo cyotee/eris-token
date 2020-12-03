@@ -15,8 +15,6 @@ contract AuthorizationDatastore {
 
     address private _authorizationPlatform;
 
-    IEventBroadcaster private _eventBroadcaster;
-
     modifier onlyPlatform() {
         require( _msgSender() == authorizationPlatform );
         _;
@@ -24,19 +22,11 @@ contract AuthorizationDatastore {
 
     mapping( address => RoleData.ContractRoles ) private _contractRoles;
 
-    constructor( address platform_, address broadcaster_ ) public {
+    constructor( address platform_ ) public {
         _authorizationPlatform = platform_;
-        // Probably wrong initialization
-        _eventBroadcaster = IEventBroadcaster(broadcaster_);
 
         console.log( "Instantiating AuthorizationDatastore." );
         console.log( "Instantiated AuthorizationDatastore." );
-    }
-
-    // TODO: Better name to indicate that I'm getting an address type of the broadcaster    - Why do I even need this?
-    function eventBroadcaster() external view returns ( address ) {
-        // return _eventBroadcaster.address;    // Must Test
-        return address( _eventBroadcaster );
     }
 
     function registerContract( address contract_, bytes32 rootRole_, address newRootAddress_ ) external onlyPlatform() {        

@@ -5,27 +5,34 @@ import "hardhat/console.sol";
 
 import "../libraries/utils/listing/uniswapV2/TokenListingUniswapV2Compatible.sol";
 import "../dependencies/libraries/utils/time/interfaces/IDateTime.sol";
+import "../dependencies/libraries/datatypes.primitives/Address.sol";
 
 /**
 Contract to execute the sale of a mintable token using a quadratic pricing model.
  */
 contract QPLGMESalePlatform is RoleBasedAccessControl {
 
+    using Address for address;
+    using SafeERC20 for IERC20;
     using TokenListingUniswapV2Compatible for TokenListingUniswapV2Compatible.TokenListing;
     using TokenListingUniswapV2Compatible for TokenListingUniswapV2Compatible.SaleData;
 
-    IDateTime private dateTimeCalculator;
+    IDateTime private _dateTimeCalculator;
+    IWETH private _weth;
+    ISaleProceedsVault private _saleProceedsVault;
+
+    ISaleProceedsCault private salesProceedsVault;
 
     // Intended to hold DEX information in a form that can be maintained over time.
+    // Coupled with the 
     mapping( address => address ) private _uniswapV2CompatibleExchangeRouterToFactoryMapping;
 
     mapping( bytes32 => TokenListingUniswapV2Compatible.SaleData ) private _saleDataMapping;
 
     // constructor() {}
 
-    /**
-     * TODO: needs authorization integration to limit access to platform admin
-     */
+    // TODO: needs authorization integration to limit access to platform admin
+    // TODO needs exchange listing tester to enable public registering of exchanges. This should confirm compatibility by minting 2 test tokens, listing, and attempting to trade. Can be implemented as an adaptor for later development
     function registerExchange( address uniswapV2CompatibleRouterddress_, address exchangeFactoryAddress_ ) public {
         _uniswapV2CompatibleExchangeRouterToFactoryMapping[exhchangeRouterAddress_] = exchangeFactoryAddress_;
     }
@@ -52,24 +59,26 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
     // TODO Sales will need to check if proceedsToken_ is the WETH address and accept Ethereum to automatically convert to WETH.
     // TODO needs to confirm _msgSender() has correct role to register sale.
     // TODO needs an event.
-    function registerSale(address saleToken_, address proceedsToken_, address uniswapV2CompatibleRouterddress_)  public {
-        require(_uniswapV2CompatibleExchangeRouterToFactoryMapping[uniswapV2CompatibleRouterddress_] != 0, "QPLGMESalePlatform not compaitble with the exchange.");
+    // TODO check reasibility of moving to independent datatore.
+    function registerSale( address saleToken_, uint256 saleTokenQPMultiplier_, address proceedsToken_, address uniswapV2CompatibleRouterddress_ )  public {
+        require(_uniswapV2CompatibleExchangeRouterToFactoryMapping[uniswapV2CompatibleRouterddress_] != 0, "QPLGMESalePlatform not compaitble with this exchange.");
 
-        bytes32 saleID = _encodeSaleID(saleToken_, proceedsToken_, uniswapV2CompatibleRouterddress_);
+        bytes32 saleID_ = _encodeSaleID(saleToken_, proceedsToken_, uniswapV2CompatibleRouterddress_);
 
-        _saleDataMapping[saleID].saleActive = false;
-        _saleDataMapping[saleID].listerAddress = Context._msgSender();
-        _saleDataMapping[saleID].tokenForSale = tokenForSale_;
-        _saleDataMapping[saleID].proceedsToken = proceedsToken_;
-        _saleDataMapping[saleID].tokenListing.uniswapV2CompatibleRouter = IUniswapV2Router02(uniswapV2CompatibleRouterddress_);
-        _saleDataMapping[saleID].tokenListing.uniswapVsCompatibleFactory = IUniswapV2Factory(_uniswapV2CompatibleExchangeRouterToFactoryMapping[uniswapV2CompatibleRouterddress_]);
+        _saleDataMapping[saleID_].saleActive = false;
+        _saleDataMapping[saleID_].listerAddress = Context._msgSender();
+        _saleDataMapping[saleID_].tokenForSale = tokenForSale_;
+        _saleDataMapping[saleID_].saleTokenQPMultiplier = saleTokenQPMultiplier_;
+        _saleDataMapping[saleID_].proceedsToken = proceedsToken_;
+        _saleDataMapping[saleID_].tokenListing.uniswapV2CompatibleRouter = IUniswapV2Router02(uniswapV2CompatibleRouterddress_);
+        _saleDataMapping[saleID_].tokenListing.uniswapVsCompatibleFactory = IUniswapV2Factory(_uniswapV2CompatibleExchangeRouterToFactoryMapping[uniswapV2CompatibleRouterddress_]);
 
-        _listToken(saleID);
+        _listToken(saleID_);
     }
 
     // TODO Needs event announcing listing has occured and reporting addresses.
     function _listToken(bytes32 saledID_) private {
-        require(_saleDataMapping[saledID_] != 0, "Sale ID does not exist.");
+        require( _saleDataMapping[saledID_] != 0, "Sale ID does not exist." );
         _saleDataMapping[saleID]
             .tokenListing
             .uniswapV2CompatiblePair = IUniswapV2Pair(
@@ -152,6 +161,8 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
         require( _saleDataMapping[saleID_].saleActivesaleActive ==  true && block.timestamp > _saleDataMapping[saleID_].saleEndTimeStamp );
     }
 
+    
+
     // TODO needs sale start time query function. Should return human readable date.
 
     // TODO needs function update schedule for a sale.
@@ -171,6 +182,57 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
     // TODO needs function to collect sale tokens from sale.
     // Must confirm that sale is ended by checking datetime.
     // Should execute the finalize sale function if not already finalized.
+
+    function _convertETHtoWETH( unint256 amount_ ) internal returns ( uint256 ) {
+        _weth.deposit{value : amount_}();
+        _weth.transfer{ address(salesProceedsVault) _salesProceedsVault}
+        return amount_;
+    }
+
+    function _buyToken( bytes32 saleID_, address buyer_, uint256 amountPaid_ ) internal {
+        _saleDataMapping[saleID_].dec18AmountOfTokenPaidByAddress[buyer_] = _saleDataMapping[saleID_].dec18AmountOfTokenPaidByAddress[buyer_].add(amountPaid_);
+        _saleDataMapping[saleID_].dec18TotalAmountOfTokenPaid = _saleDataMapping[saleID_].dec18TotalAmountOfTokenPaid.add( amountPaid_ );
+
+        uint256 saleTokenAmountPurchased_ = _calculateTokensForPayment( saleID_ , _saleDataMapping[saleID_].dec18AmountOfTokenPaidByAddress[buyer_]  );
+
+        ISecureERC20( _saleDataMapping[saleID_].tokenForSale ).burn( _saleDataMapping[saleID_].tokenForSale, _saleDataMapping[saleID_].dec18AmountOfTokenPaidByAddress[buyer_].sub( amountPaid_ ) );
+
+        ISecureERC20( _saleDataMapping[saleID_].tokenForSale ).mint( _saleDataMapping[saleID_].tokenForSale, _saleDataMapping[saleID_].dec18AmountOfTokenPaidByAddress[buyer_] );
+    }
+
+    function _calculateTokensForPayment( bytes32 saleID_, uint256 payment_ ) private view returns ( uint256 ) {
+        return FinancialSafeMath.quadraticPricing( payment ).mul( _saleDataMapping[saleID_].saleTokenQPMultiplier );
+        // Was needed for Wei calculation
+        //.mul(1e9)
+    }
+
+    function buyTokenWithETH( bytes32 saleID_ ) public payable {
+
+        uint256 currentVaultWETHBalance_ = _weth.balanceOf( address(_salesProceedsVault) );
+        uint256 amountPaid_ = _convertETHtoWETH(msg.value);
+        require( _weth.balanceOf( address(salesProceedsVault) ) > 0 );
+        require( currentVaultWETHBalance_ == _weth.balanceOf( address(salesProceedsVault) ).sub( amountPaid_ ) );
+
+        _buyToken( saleID_, acontext._msgSender(), amountPaid_ );
+    }
+
+    function getTokenForSale( bytes32 saleID_ ) public returns ( address ) {
+        return _saleDataMapping[saleID_].tokenForSale;
+    }
+
+    function buyTokenWithToken( bytes32 memory saleID_, uint256 amountPaid_ ) internal {
+        uint256 amountPaidInToken = amountPaid_;
+        IERC20(_saleDataMapping[saleID_].tokenForSale).safeTransferFrom( _msgSender(), address(_saleProceedsVault), amount);
+
+        uin256 memory currentBuyersWeirPaidForEris_ = _weiPaidForErisByAddress[_msgSender()];
+        _weiPaidForErisByAddress[_msgSender()] = _weiPaidForErisByAddress[_msgSender()].add(amountPaidInWEI);
+
+        totalWeiPaidForEris = totalWeiPaidForEris.add(_weiPaidForErisByAddress[_msgSender()]).sub( currentBuyersWeirPaidForEris_ );
+
+        _totalSupply = _totalSupply.add( _erisForWeiPaid(_weiPaidForErisByAddress[_msgSender()].add(amountPaidInWEI)) ).sub( _erisForWeiPaid(_weiPaidForErisByAddress[_msgSender()] ) );
+
+        ethDonationToCharity = ethDonationToCharity.add( _weiPaidForErisByAddress[_msgSender()] / 10 ).sub( currentBuyersWeirPaidForEris_.div(10) );
+    }
 
 /* -------------------------------------------------------------------------- */
 /*              Functions for reuse in platform reimplementation              */
@@ -209,23 +271,9 @@ contract QPLGMESalePlatform is RoleBasedAccessControl {
     //     return FinancialSafeMath.quadraticPricing( payment ).mul(_erisToEthRatio).mul(1e9);
     // }
 
-    // function _erisForWeiPaid( uint256 payment ) private view returns ( uint256 ) {
-    //     return FinancialSafeMath.quadraticPricing( payment ).mul(_erisToEthRatio).mul(1e9);
-    // }
+    
 
-    // function buyERIS( uint256 amount) public payable erisQPLGMEActive() {
-    //     uint256 amountPaidInWEI = amount;
-    //     _testToken.transferFrom( _msgSender(), address(this), amount);
-
-    //     uin256 memory currentBuyersWeirPaidForEris_ = _weiPaidForErisByAddress[_msgSender()];
-    //     _weiPaidForErisByAddress[_msgSender()] = _weiPaidForErisByAddress[_msgSender()].add(amountPaidInWEI);
-
-    //     totalWeiPaidForEris = totalWeiPaidForEris.add(_weiPaidForErisByAddress[_msgSender()]).sub( currentBuyersWeirPaidForEris_ );
-
-    //     _totalSupply = _totalSupply.add( _erisForWeiPaid(_weiPaidForErisByAddress[_msgSender()].add(amountPaidInWEI)) ).sub( _erisForWeiPaid(_weiPaidForErisByAddress[_msgSender()] ) );
-
-    //     ethDonationToCharity = ethDonationToCharity.add( _weiPaidForErisByAddress[_msgSender()] / 10 ).sub( currentBuyersWeirPaidForEris_.div(10) );
-    // }
+    
 
     // function endQPLGME() public onlyOwner() {
     //     if( !hadQPLGME ) {

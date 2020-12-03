@@ -1,0 +1,9 @@
+[submodule "contracts/dependencies/holyzeppelin"]
+	path = contracts/dependencies/holyzeppelin
+	url = git@github.com:cyotee/holyzeppelin.git
+[submodule "contracts/dependencies/authorization-protocol"]
+	path = contracts/dependencies/authorization-protocol
+	url = git@github.com:cyotee/authorization-protocol.git
+[submodule "contracts/dependencies/mimir-solutions-sales-protocol"]
+	path = contracts/dependencies/mimir-solutions-sales-protocol
+	url = git@github.com:Mimir-Solutions/mimir-solutions-sales-protocol.git

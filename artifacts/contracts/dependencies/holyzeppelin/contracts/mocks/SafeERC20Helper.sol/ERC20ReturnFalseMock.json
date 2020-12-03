@@ -1,0 +1,112 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ERC20ReturnFalseMock",
+  "sourceName": "contracts/dependencies/holyzeppelin/contracts/mocks/SafeERC20Helper.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610171806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063095ea7b31461005157806323b872dd14610091578063a9059cbb14610051578063dd62ed3e146100c7575b600080fd5b61007d6004803603604081101561006757600080fd5b506001600160a01b038135169060200135610107565b604080519115158252519081900360200190f35b61007d600480360360608110156100a757600080fd5b506001600160a01b03813581169160208101359091169060400135610113565b6100f5600480360360408110156100dd57600080fd5b506001600160a01b0381358116916020013516610121565b60408051918252519081900360200190f35b50506000600181905590565b600060018190559392505050565b600060015460001461013257600080fd5b5060009291505056fea2646970667358221220498ab8fabc0ed6df1f7c374fe3b412780daef195c6b021e1c999b8b25a5a5ab564736f6c63430007040033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c8063095ea7b31461005157806323b872dd14610091578063a9059cbb14610051578063dd62ed3e146100c7575b600080fd5b61007d6004803603604081101561006757600080fd5b506001600160a01b038135169060200135610107565b604080519115158252519081900360200190f35b61007d600480360360608110156100a757600080fd5b506001600160a01b03813581169160208101359091169060400135610113565b6100f5600480360360408110156100dd57600080fd5b506001600160a01b0381358116916020013516610121565b60408051918252519081900360200190f35b50506000600181905590565b600060018190559392505050565b600060015460001461013257600080fd5b5060009291505056fea2646970667358221220498ab8fabc0ed6df1f7c374fe3b412780daef195c6b021e1c999b8b25a5a5ab564736f6c63430007040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

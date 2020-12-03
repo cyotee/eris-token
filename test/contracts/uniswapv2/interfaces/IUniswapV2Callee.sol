@@ -1,6 +1,6 @@
-// SPDX-License-Identifier: MIT
-pragma solidity 0.7.4;
+// // SPDX-License-Identifier: MIT
+// pragma solidity 0.7.4;
 
-interface IUniswapV2Callee {
-    function uniswapV2Call(address sender, uint amount0, uint amount1, bytes calldata data) external;
-}
+// interface IUniswapV2Callee {
+//     function uniswapV2Call(address sender, uint amount0, uint amount1, bytes calldata data) external;
+// }
